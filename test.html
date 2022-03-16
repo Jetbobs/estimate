@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="test.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="estimate">
+        <form action="" id="frm_office" name="frm_office" method="post">
+            <input type="hidden" name="sum_office" value="0">
+            <div class="tabBox">
+                <table width="100%" class="tableList">
+                    <tr>
+                        <td class="estimate_name">
+                            <span>오피스넷</span>
+                        </td>
+                        <td class="estimate_contents">
+                            <div>
+                            <select name="internet_speed" id="">
+                                <option value="::인터넷속도::">::인터넷속도::</option>
+                                <option value="a">100Mb (27,720원)</option>
+                                <option value="b">500Mb (39,600원)</option>
+                                <option value="c">1Gb (44,550원)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select name="internet_speed_perpc" id="">
+                                <option value="0">::회선수::</option>
+                                <option value="1">1회선</option>
+                                <option value="2">2회선</option>
+                                <option value="3">3회선</option>
+                                <option value="4">4회선</option>
+                                <option value="5">5회선</option>
+                                <option value="6">6회선</option>
+                                <option value="7">7회선</option>
+                                <option value="8">8회선</option>
+                                <option value="9">9회선</option>
+                                <option value="10">10회선</option>
+                            </select>
+                        </div>
+                        <div>
+                            <span class="explain"> (100Mb 부터 ~ 1Gb 속도선택)</span>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="estimate_name">
+                            <span>와이파이</span>
+                        </td>
+                        <td class="estimate_contents">
+                            <div class="perpc_hidden_wifi">
+                                <select name="wifi_perpc" id="wifi_perpc">
+                                    <option value="0">::회선수::</option>
+                                    <option value="1">1회선</option>
+                                    <option value="2">2회선</option>
+                                    <option value="3">3회선</option>
+                                    <option value="4">4회선</option>
+                                    <option value="5">5회선</option>
+                                    <option value="6">6회선</option>
+                                    <option value="7">7회선</option>
+                                    <option value="8">8회선</option>
+                                    <option value="9">9회선</option>
+                                    <option value="10">10회선</option>
+                                </select>
+                            </div>
+                            <div class="wifi_box">
+                                <input type="radio" name="wifi" value="N_wifi" >
+                                <label for="wifi">필요없음</label>
+                                <input type="radio" name="wifi" value="Y_wifi" >
+                                <label for="wifi">필요함</label>
+                            </div>
+
+                            <div>
+                                <span class="explain">(기가 무선 공유기 1,100원)</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="estimate_name">
+                            <span>고정 IP</span>
+                        </td>
+                        <td class="estimate_contents">
+                            <div class="perpc_hidden_ip">
+                                <select name="ip" id="ip">
+                                    <option value="0">::회선수::</option>
+                                    <option value="1">1회선</option>
+                                    <option value="2">2회선</option>
+                                    <option value="3">3회선</option>
+                                    <option value="4">4회선</option>
+                                    <option value="5">5회선</option>
+                                    <option value="6">6회선</option>
+                                    <option value="7">7회선</option>
+                                    <option value="8">8회선</option>
+                                    <option value="9">9회선</option>
+                                    <option value="10">10회선</option>
+                                </select>
+                            </div>
+                            <div class="ip_box">
+                                <input type="radio" name="ip" value="N_ip">
+                                <label for="ip">필요없음</label>
+                                <input type="radio" name="ip" value="Y_ip">
+                                <label for="ip">필요함</label>
+                            </div>
+                            <div>
+                                <span class="explain"> (오피스넷 가입시 가입 가능)</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
