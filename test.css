@@ -2,8 +2,15 @@
     margin: 0;
     padding: 0;
 }
+
 #estimate{
     margin: 10px;
+}
+#estimate table{
+    border-top: 3px solid #26b5b5;
+}
+.tableList tr td{
+    border-bottom: 1px solid #dadada;
 }
 .estimate_name{
     background-color: #f8f8f8;
@@ -52,6 +59,15 @@ a:link{
 }
 .perpc_hidden_ip{
     display: none;
+}
+.callfax_box select{
+    width: 50%;
+}
+.explain_box{
+    padding: 5px 0;
+}
+.extra_services_box span{
+    padding: 5px 10px;
 }
 /* #estimate .explain{
     color: #fff;

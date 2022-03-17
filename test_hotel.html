@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="test.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="estimate">
+        <form action="" id="frm_office" name="frm_office" method="post">
+            <input type="hidden" name="sum_office" value="0">
+            <div class="tabBox">
+                <table width="100%" class="tableList">
+                    <tr>
+                        <td class="estimate_name">
+                            <span>설치할 룸 개수는 ?</span>
+                        </td>
+                        <td class="estimate_contents">
+                            <div class="room_box">
+                                <input type="radio" name="room_setting" value="0">
+                                <label for="room_setting">자동셋팅</label>
+                                <input type="radio" name="room_setting" value="1">
+                                <label for="room_setting">500M</label>
+                                <input type="radio" name="room_setting" value="2">
+                                <label for="room_setting">100M</label>
+                            </div>
+                            <div>
+                                <input type="text" name="room_ea">
+                                <span>룸</span>
+                            </div>
+                            <div>
+                                <span>총 인터넷</span>
+                                <input type="text" name="need_room_ea">
+                                <span>회선이 필요합니다.</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="estimate_name">
+                            <span>멀티룸셋팅에 필요한 인터넷입니다.</span>
+                        </td>
+                        <td class="estimate_contents">
+                            <div class="multiroom_box">
+                                <div>
+                                    <span>500M</span>
+                                    <input type="text" name="multiroom_500m">
+                                    <span>500M 패밀리</span>
+                                    <input type="text" name="multiroom_500m_family">
+                                </div>
+                                <div>
+                                    <span>100M</span>
+                                    <input type="text" name="multiroom_100m">
+                                    <span>100M 패밀리</span>
+                                    <input type="text" name="multiroom_100m_family">
+                                </div>
+
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="estimate_name">
+                            <span>TV 종류를 선택해주세요.</span>
+                        </td>
+                        <td class="estimate_contents">
+                            <div class="tv_type_box">
+                                <input type="radio" name="tv_type" value="0">
+                                <label for="need_tv">OTS 설치</label>
+                                <input type="radio" name="tv_type" value="1">
+                                <label for="need_tv">OTV 설치</label>
+                            </div>
+                            <!-- <div class="explain_box">
+                                <span class="explain"> (오피스넷 가입시 가입 가능)</span>
+                            </div> -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="estimate_name">
+                            <span>룸마다 WiFi가 필요하신가요 ?</span>
+                        </td>
+                        <td class="estimate_contents">
+                            <div class="need_room_wifi_box">
+                                <input type="radio" name="need_room_wifi" value="0">
+                                <label for="need_tv">OTS 설치</label>
+                                <input type="radio" name="need_room_wifi" value="1">
+                                <label for="need_tv">OTV 설치</label>
+                            </div>
+                            <!-- <div class="explain_box">
+                                <span class="explain"> (오피스넷 가입시 가입 가능)</span>
+                            </div> -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="estimate_name">
+                            <span>보안카메라가 필요하신가요 ? </span>
+                        </td>
+                        <td class="estimate_contents">
+                            <div class="cctv_box">
+                                <div>
+                                    <select name="cctv" id="cctv">
+                                        <option value="0">::보안카메라선택::</option>
+                                        <option value="1">GiGAeyes i_slim1대</option>
+                                        <option value="2">GiGAeyes i_slim2대</option>
+                                        <option value="3">GiGAeyes i_slim3대</option>
+                                        <option value="4">GiGAeyes i_slim5대</option>
+                                        <option value="5">GiGAeyes i_slim6대</option>
+                                        <option value="6">GiGAeyes i_slim7대</option>
+                                        <option value="7">GiGAeyes i_slim8대</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="cctv_mobile_combination" value="모바일결합"
+                                        id="mobile_cctv">
+                                    <label for="mobile_cctv">모바일결합</label>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

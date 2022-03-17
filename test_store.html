@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="test.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="estimate">
+        <form action="" id="frm_office" name="frm_office" method="post">
+            <input type="hidden" name="sum_office" value="0">
+            <div class="tabBox">
+                <table width="100%" class="tableList">
+                    <tr>
+                        <td class="estimate_name">
+                            <span>인터넷 희망속도는 ?</span>
+                        </td>
+                        <td class="estimate_contents">
+                            <div class="internet_speed_box">
+                                <select name="internet_speed" id="">
+                                    <option value="::인터넷속도::">::인터넷속도::</option>
+                                    <option value="500M+">500M+와이파이</option>
+                                    <option value="1G+">1G+와이파이</option>
+                                    <option value="100M">100M</option>
+                                    <option value="500M">500M</option>
+                                    <option value="1G">1G</option>
+                                </select>
+                                <input type="checkbox" name="internet_speed_family" value="패밀리상품으로신청" id="isf">
+                                <label for="isf">패밀리상품으로신청</label>
+                                <input type="checkbox" name="internet_speed_business" value="사업자로 신청" id="isb" checked>
+                                <label for="isb">사업자로 신청</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="estimate_name">
+                            <span>TV가 필요하신가요 ?</span>
+                        </td>
+                        <td class="estimate_contents">
+                            <div class="need_tv_box">
+                                <select name="tv" id="tv">
+                                    <option value="0">::필요없음::</option>
+                                    <option value="1">OTV(베이직)_243 ch</option>
+                                    <option value="2">OTV(라이트)_248 ch</option>
+                                    <option value="3">OTV(에센스)_273 ch</option>
+                                </select>
+                                <input type="checkbox" name="ginisettop" value="지니셋탑 희망시 체크" id="tv_gini" checked>
+                                <label for="tv_gini">지니셋탑 희망시 체크</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="estimate_name">
+                            <span>추가 TV가 필요하신가요 ?</span>
+                        </td>
+                        <td class="estimate_contents">
+                            <div class="need_tv_more">
+                                <input type="radio" name="need_tv_more" value="0">
+                                <label for="need_tv">추가TV필요없음</label>
+                                <input type="radio" name="need_tv_more" value="1">
+                                <label for="need_tv">1대 더 필요</label>
+                                <input type="radio" name="need_more" value="2">
+                                <label for="need_tv">2대 더 필요</label>
+                            </div>
+                            <!-- <div class="explain_box">
+                                <span class="explain"> (오피스넷 가입시 가입 가능)</span>
+                            </div> -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="estimate_name">
+                            <span>유선전화 필요하신가요 ?</span>
+                        </td>
+                        <td class="estimate_contents">
+                            <div class="need_wirecall">
+                                <div class="need_wirecall_box">
+                                    <select name="need_wirecall_call_perpc" id="need_wirecall_call_perpc">
+                                        <option value="0">::회선수::</option>
+                                        <option value="1">1회선</option>
+                                        <option value="2">2회선</option>
+                                        <option value="3">3회선</option>
+                                        <option value="4">4회선</option>
+                                        <option value="5">5회선</option>
+                                        <option value="6">6회선</option>
+                                        <option value="7">7회선</option>
+                                        <option value="8">8회선</option>
+                                        <option value="9">9회선</option>
+                                        <option value="10">10회선</option>
+                                    </select>
+                                    <select name="need_wirecall_call" id="need_wirecall_call">
+                                        <option value="">::요금제선택::</option>
+                                        <option value="1">홈무한3000</option>
+                                        <option value="2">소호무한3000</option>
+                                        <option value="3">팩스전용</option>
+                                    </select>
+                                    <!-- <div class="explain_box">
+                                        <span class="explain">  (유선전화기 제공, 월 무료통화 제공, 발신표시 포함) </span>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="estimate_name">
+                            <span>인터넷전화 부가서비스를 선택해주세요.</span>
+                        </td>
+                        <td class="estimate_contents">
+                            <div class="extra_services_box">
+
+                                <input type="checkbox" name="display_callerid" value="발신번호표시" id="x1">
+                                <label for="x1">발신번호표시</label>
+
+
+                                <input type="checkbox" name="calling_stay" value="통화중대기" id="x2">
+                                <label for="x2">통화중대기</label>
+
+
+                                <input type="checkbox" name="condition_destinationcall_change" value="착신통화전환" id="x3">
+                                <label for="x3">착신통화전환</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="estimate_name">
+                            <span>POS 기기 필요하신가요 ?</span>
+                        </td>
+                        <td class="estimate_contents">
+                            <div class="need_pos_box">
+                                <div>
+                                    <select name="pos" id="pos">
+                                        <option value="0">::POS형선택::</option>
+                                        <option value="1">카드단말_SMT-T283</option>
+                                        <option value="2">POS_HIT9</option>
+                                    </select>
+                                    <div class="explain_box">
+                                        <span class="explain">(인터넷 요금 월 -3,300원 추가 할인반영)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="estimate_name">
+                            <span>보안카메라가 필요하신가요 ? </span>
+                        </td>
+                        <td class="estimate_contents">
+                            <div class="cctv_box">
+                                <div>
+                                    <select name="cctv" id="cctv">
+                                        <option value="0">::보안카메라선택::</option>
+                                        <option value="1">GiGAeyes i_slim1대</option>
+                                        <option value="2">GiGAeyes i_slim2대</option>
+                                        <option value="3">GiGAeyes i_slim3대</option>
+                                        <option value="4">GiGAeyes i_slim5대</option>
+                                        <option value="5">GiGAeyes i_slim6대</option>
+                                        <option value="6">GiGAeyes i_slim7대</option>
+                                        <option value="7">GiGAeyes i_slim8대</option>
+                                        <option value="8">GiGAeyes i_slim9대</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="cctv_mobile_combination" value="모바일결합"
+                                        id="mobile_cctv">
+                                    <label for="mobile_cctv">모바일결합</label>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="estimate_name">
+                            <span>KT모바일 결합할인(가족포함)</span>
+                        </td>
+                        <td class="estimate_contents">
+                            <div class="mobile_combination_box">
+                                <div>
+                                    <select name="mobile_combination" id="mobile_combination">
+                                        <option value="0">::가족모바일합산요금::</option>
+                                        <option value="1">가족합산(22,000원↓)</option>
+                                        <option value="2">가족합산(22,000원↑)</option>
+                                        <option value="3">가족합산(64,900원↑)</option>
+                                        <option value="4">가족합산(108,900원↑)</option>
+                                        <option value="5">가족합산(141,900원↑)</option>
+                                        <option value="6">가족합산(174,900원↑)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

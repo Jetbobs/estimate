@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="test.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="test.js"></script>
     <title>Document</title>
 </head>
@@ -19,97 +20,233 @@
                 <table width="100%" class="tableList">
                     <tr>
                         <td class="estimate_name">
-                            <span>오피스넷</span>
+                            <span>인터넷 희망속도는 ?</span>
                         </td>
                         <td class="estimate_contents">
-                            <div>
-                            <select name="internet_speed" id="">
-                                <option value="::인터넷속도::">::인터넷속도::</option>
-                                <option value="a">100Mb (27,720원)</option>
-                                <option value="b">500Mb (39,600원)</option>
-                                <option value="c">1Gb (44,550원)</option>
-                            </select>
-                        </div>
-                        <div>
-                            <select name="internet_speed_perpc" id="">
-                                <option value="0">::회선수::</option>
-                                <option value="1">1회선</option>
-                                <option value="2">2회선</option>
-                                <option value="3">3회선</option>
-                                <option value="4">4회선</option>
-                                <option value="5">5회선</option>
-                                <option value="6">6회선</option>
-                                <option value="7">7회선</option>
-                                <option value="8">8회선</option>
-                                <option value="9">9회선</option>
-                                <option value="10">10회선</option>
-                            </select>
-                        </div>
-                        <div>
-                            <span class="explain"> (100Mb 부터 ~ 1Gb 속도선택)</span>
-                        </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="estimate_name">
-                            <span>와이파이</span>
-                        </td>
-                        <td class="estimate_contents">
-                            <div class="perpc_hidden_wifi">
-                                <select name="wifi_perpc" id="wifi_perpc">
-                                    <option value="0">::회선수::</option>
-                                    <option value="1">1회선</option>
-                                    <option value="2">2회선</option>
-                                    <option value="3">3회선</option>
-                                    <option value="4">4회선</option>
-                                    <option value="5">5회선</option>
-                                    <option value="6">6회선</option>
-                                    <option value="7">7회선</option>
-                                    <option value="8">8회선</option>
-                                    <option value="9">9회선</option>
-                                    <option value="10">10회선</option>
+                            <div class="internet_speed_box">
+                                <select name="internet_speed" id="">
+                                    <option value="::인터넷속도::">::인터넷속도::</option>
+                                    <option value="500M+">500M+와이파이</option>
+                                    <option value="1G+">1G+와이파이</option>
+                                    <option value="100M">100M</option>
+                                    <option value="500M">500M</option>
+                                    <option value="1G">1G</option>
+                                    <option value="2.5G">2.5G</option>
+                                    <option value="5G">5G</option>
+                                    <option value="10G">10G</option>
                                 </select>
                             </div>
-                            <div class="wifi_box">
-                                <input type="radio" name="wifi" value="N_wifi" >
-                                <label for="wifi">필요없음</label>
-                                <input type="radio" name="wifi" value="Y_wifi" >
-                                <label for="wifi">필요함</label>
-                            </div>
-
                             <div>
-                                <span class="explain">(기가 무선 공유기 1,100원)</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="estimate_name">
-                            <span>고정 IP</span>
-                        </td>
-                        <td class="estimate_contents">
-                            <div class="perpc_hidden_ip">
-                                <select name="ip" id="ip">
+                                <select name="internet_speed_perpc" id="">
                                     <option value="0">::회선수::</option>
                                     <option value="1">1회선</option>
                                     <option value="2">2회선</option>
                                     <option value="3">3회선</option>
                                     <option value="4">4회선</option>
                                     <option value="5">5회선</option>
-                                    <option value="6">6회선</option>
-                                    <option value="7">7회선</option>
-                                    <option value="8">8회선</option>
-                                    <option value="9">9회선</option>
-                                    <option value="10">10회선</option>
+                                </select>
+                            </div>
+                            <div class="explain_box">
+                                <span class="explain">PC 무제한 접속</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="estimate_name">
+                            <span>고정 IP가 필요하신가요 ?</span>
+                        </td>
+                        <td class="estimate_contents">
+                            <div class="perpc_hidden_fixed_ip">
+                                <select name="fixed_ip" id="fixed_ip">
+                                    <option value="0">::회선수::</option>
+                                    <option value="1">1회선</option>
+                                    <option value="2">2회선</option>
+                                    <option value="3">3회선</option>
+                                    <option value="4">4회선</option>
+                                    <option value="5">5회선</option>
+                                </select>
+                            </div>
+                            <div class="fixed_ip_box">
+                                <input type="radio" name="office_ip" value="N_office_ip">
+                                <label for="office_ip">필요없음</label>
+                                <input type="radio" name="office_ip" value="Y_office_ip">
+                                <label for="office_ip">필요함</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="estimate_name">
+                            <span>TV 필요하신가요 ?</span>
+                        </td>
+                        <td class="estimate_contents">
+                            <div class="need_tv">
+                                <select name="tv" id="tv">
+                                    <option value="0">::필요없음::</option>
+                                    <option value="1">BizOTV_베이직_243 ch</option>
+                                    <option value="2">BizOTV_라이트_248 ch</option>
+                                    <option value="3">BizOTV_에센스_273 ch</option>
+                                    <option value="4">BizOTV_슬림_</option>
                                 </select>
                             </div>
                             <div class="ip_box">
-                                <input type="radio" name="ip" value="N_ip">
-                                <label for="ip">필요없음</label>
-                                <input type="radio" name="ip" value="Y_ip">
-                                <label for="ip">필요함</label>
+                                <input type="radio" name="need_tv" value="0">
+                                <label for="need_tv">추가TV필요없음</label>
+                                <input type="radio" name="need_tv" value="1">
+                                <label for="need_tv">1대 더 필요</label>
+                                <input type="radio" name="need_tv" value="2">
+                                <label for="need_tv">2대 더 필요</label>
                             </div>
-                            <div>
+                            <!-- <div class="explain_box">
                                 <span class="explain"> (오피스넷 가입시 가입 가능)</span>
+                            </div> -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="estimate_name">
+                            <span>사무실 전화/팩스</span>
+                        </td>
+                        <td class="estimate_contents">
+                            <div class="call_internet_box">
+                                <div class="call_internet">
+                                    <div>
+                                        <label for="">필요한 전화(인터넷전화/유선전화) 대수는 ?</label>
+                                    </div>
+                                    <select name="office_internetcall_perpc" id="office_internetcall_perpc">
+                                        <option value="0">::회선수::</option>
+                                        <option value="1">1회선</option>
+                                        <option value="2">2회선</option>
+                                        <option value="3">3회선</option>
+                                        <option value="4">4회선</option>
+                                        <option value="5">5회선</option>
+                                        <option value="6">6회선</option>
+                                        <option value="7">7회선</option>
+                                        <option value="8">8회선</option>
+                                        <option value="9">9회선</option>
+                                        <option value="10">10회선</option>
+                                    </select>
+                                    <select name="office_internetcall" id="office_internetcall">
+                                        <option value="">::인터넷전화선택::</option>
+                                        <option value="A">IP-4705H_Centrex</option>
+                                        <option value="B">IP-4705G_Centrex</option>
+                                        <option value="C">IP-700SC</option>
+                                        <option value="D">MWP-2500</option>
+                                    </select>
+                                    <!-- <div class="explain_box">
+                                        <span class="explain">  (유선전화기 제공, 월 무료통화 제공, 발신표시 포함) </span>
+                                    </div> -->
+                                </div>
+                                <div class="call_wire_box">
+                                    <div>
+                                        <select name="office_wirecall_perpc" id="office_wirecall_perpc">
+                                            <option value="0">::회선수::</option>
+                                            <option value="1">1회선</option>
+                                            <option value="2">2회선</option>
+                                            <option value="3">3회선</option>
+                                            <option value="4">4회선</option>
+                                            <option value="5">5회선</option>
+                                            <option value="6">6회선</option>
+                                            <option value="7">7회선</option>
+                                            <option value="8">8회선</option>
+                                            <option value="9">9회선</option>
+                                            <option value="10">10회선</option>
+                                        </select>
+                                        <select name="office_wirecall" id="office_wirecall">
+                                            <option value="">::유선전화선택::</option>
+                                            <option value="1">홈무한3000</option>
+                                            <option value="2">소호무한3000</option>
+                                            <option value="3">팩스전용</option>
+                                        </select>
+                                    </div>
+                                    <!-- <div class="explain_box">
+                                        <span class="explain"> (유선전화기 제공, 무료통화 요금 미제공, 발신표시 미포함)</span>
+                                    </div> -->
+                                </div>
+                                <div class="fax_box">
+                                    <select name="fax" id="fax">
+                                        <option value="">::팩스선택::</option>
+                                        <option value="A">사용함(6,050원)</option>
+                                    </select>
+                                    <select name="fax_perpc" id="fax_perpc">
+                                        <option value="0">::회선수::</option>
+                                        <option value="1">1회선</option>
+                                        <option value="2">2회선</option>
+                                        <option value="3">3회선</option>
+                                        <option value="4">4회선</option>
+                                        <option value="5">5회선</option>
+                                        <option value="6">6회선</option>
+                                        <option value="7">7회선</option>
+                                        <option value="8">8회선</option>
+                                        <option value="9">9회선</option>
+                                        <option value="10">10회선</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="estimate_name">
+                            <span>인터넷전화 부가서비스를 선택해주세요.</span>
+                        </td>
+                        <td class="estimate_contents">
+                            <div class="extra_services_box">
+
+                                <input type="checkbox" name="display_callerid" value="발신번호표시" id="x1">
+                                <label for="x1">발신번호표시</label>
+
+
+                                <input type="checkbox" name="calling_music" value="통화연결음" id="x2">
+                                <label for="x2">통화연결음</label>
+
+
+                                <input type="checkbox" name="condition_destinationcall" value="조건별착신전화" id="x3">
+                                <label for="x3">조건별착신전화</label>
+
+                                <input type="checkbox" name="ars" value="발신번호표시" id="x4">
+                                <label for="x4">ARS</label>
+
+                            </div>
+                            <div class="extra_services_box2">
+
+                                <input type="checkbox" name="onenumber_multiphone" value="원넘버멀티폰" id="x5">
+                                <label for="x5">원넘버멀티폰</label>
+
+
+                                <input type="checkbox" name="personalcall_security" value="개인통화보안" id="x6">
+                                <label for="x6">개인통화보안</label>
+
+                                <input type="checkbox" name="office100" value="오피스100" id="x7">
+                                <label for="x7">오피스100</label>
+
+                                <input type="checkbox" name="office200" value="오피스200" id="x8">
+                                <label for="x8">오피스200</label>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="estimate_name">
+                            <span>보안카메라가 필요하신가요 ? </span>
+                        </td>
+                        <td class="estimate_contents">
+                            <div class="cctv_box">
+                                <div>
+                                    <select name="cctv" id="cctv">
+                                        <option value="0">::보안카메라선택::</option>
+                                        <option value="1">GiGAeyes i_slim1대</option>
+                                        <option value="2">GiGAeyes i_slim2대</option>
+                                        <option value="3">GiGAeyes i_slim3대</option>
+                                        <option value="4">GiGAeyes i_slim5대</option>
+                                        <option value="5">GiGAeyes i_slim6대</option>
+                                        <option value="6">GiGAeyes i_slim7대</option>
+                                        <option value="7">GiGAeyes i_slim8대</option>
+                                        <option value="8">GiGAeyes i_slim9대</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="cctv_mobile_combination" value="모바일결합"
+                                        id="mobile_cctv">
+                                    <label for="mobile_cctv">모바일결합</label>
+                                </div>
                             </div>
                         </td>
                     </tr>
