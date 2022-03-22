@@ -31,6 +31,9 @@
 .er_header_date2{
     float: right;
 }
+.er_header p{
+    margin: 12px 0;
+}
 .er_contents{
     margin: 0 auto;
     width: 100%;
@@ -56,10 +59,135 @@ td > font {
 }
 .er_contents tr th{
     border: 2px solid #444;
+    text-align: center;
 }
 .er_contents tr th.er_header_title{
     font-weight: 700;
 }
-.er_contents tr td.er_header_subtitle{
+.er_contents tr td.er_contents_subtitle{
     font-weight: 700;
+}
+.er_contents table th{
+    color: #222;
+}
+.er_contents table td{
+    color: #222;
+}
+#er_sum{
+    background-color: #02303e;
+    color: #fff;
+    margin: 0 auto;
+    margin-top: 20px;
+    font-weight: bold;
+    display: flex;
+    border-radius: 5px;
+    height: 65px;
+    width: 100%;
+    line-height: 65px;
+    font-size: 18px;
+    justify-content: space-around;
+}
+#er_sum span{
+    padding: 11px 26px;
+    background-color: #fff;
+    border-radius: 5px;
+    color: #111;
+}
+#er_sum .er_sum4 span{
+    color: #e80000;
+}
+#er_footer{
+    width: 100%;
+    margin: 0 auto;
+    background-color: #dedede;
+    border-radius: 5px;
+}
+#er_footer h4{
+    font-size: 15px;
+    padding: 15px 0 0 40px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+#er_footer ul{
+    padding-inline-start: 40px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+#er_footer li{
+    float: none;
+    margin: 3px 0;
+    font-size: 13px;
+    list-style: none;
+}
+#er_footer li:last-child{
+    padding-bottom: 15px;
+}
+@media screen and (min-width:1024px){
+
+}
+@media screen and (min-width:768px) and (max-width: 1023px) {
+
+    #er_floatbanner{
+        display: none;
+    }
+    #er_sum{
+        flex-wrap: wrap;
+        height: auto;
+    }
+    #er_sum .er_sum1{
+        width: 50%;
+        text-align: center;
+    }
+    #er_sum .ersum2 span{
+        padding: 11px 40px;
+        width: 0;
+        height: 0;
+        width: 50%;
+        font-size: 15px;
+    }
+    #er_sum .er_sum3{
+        width: 50%;
+        text-align: center;
+    }
+    #er_sum .ersum4 span{
+        padding: 11px 40px;
+        width: 0;
+        height: 0;
+        width: 50%;
+        font-size: 15px;
+    }
+
+}
+@media screen and (max-width:767px){
+
+    #er_floatbanner{
+        display: none;
+    }
+    #er_sum{
+        flex-wrap: wrap;
+        height: auto;
+    }
+    #er_sum .er_sum1{
+        width: 50%;
+        text-align: center;
+    }
+    #er_sum .ersum2 span{
+        padding: 11px 40px;
+        width: 0;
+        height: 0;
+        width: 50%;
+        font-size: 15px;
+    }
+    #er_sum .er_sum3{
+        width: 50%;
+        text-align: center;
+    }
+    #er_sum .ersum4 span{
+        padding: 11px 40px;
+        width: 0;
+        height: 0;
+        width: 50%;
+        font-size: 15px;
+    }
+
 }

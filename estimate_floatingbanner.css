@@ -1,0 +1,171 @@
+#er_floatbanner{
+    width: 300px;
+    position: absolute;
+    top: 250px;
+    right: 20px;
+    z-index: 99;
+}
+#er_floatbanner table{
+    border: 2px solid #d71826;
+    border-radius: 20px;
+    padding: 20px 20px 0;
+}
+#er_floatbanner h2{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+    background-color: #d71826;
+    padding: 15px 0;
+    color: #fff;
+    border-radius: 30px;
+}
+
+#er_floatbanner div p{
+    float: left;
+    line-height: 100%;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    padding-right: 8px;
+}
+
+#erf_table tr th{
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 100%;
+    width: 30%;
+    padding: 10px 0;
+}
+#erf_table tr{
+    height: 80px;
+}
+/* #erf_table .erf_table_box1{
+    text-align: right;
+    background-color: #fcf7d1;
+    font-weight: 600;
+    border: 1px solid #bbb;
+    width: 110px;
+    border-radius: 5px;
+    width: 40%;
+}
+#erf_table .erf_table_box2{
+    text-align: right;
+    font-weight: 600;
+    border: 1px solid #bbb;
+    width: 110px;
+    border-radius: 5px;
+    color: blue; 
+    background-color: #d1fdff;
+} */
+#erf_table td.erf_table_box1 div:nth-child(1){
+    background-color: #fcf7d1;
+    padding: 10px 5px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    text-align: right;
+    font-weight: 600;
+    color: #666;
+}
+#erf_table td.erf_table_box1 div:nth-child(2){
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+    padding: 2px 0;
+    font-weight: 400;
+}
+#erf_table td.erf_table_box2 div:nth-child(1){
+    background-color: #d1fdff;
+    padding: 10px 5px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    text-align: right;
+    color: blue;
+    font-weight: 600;
+}
+#erf_table td.erf_table_box2 div:nth-child(2){
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+    padding: 2px 0;
+    color: blue;
+    font-weight: 400;
+}
+#erf_consulting{
+    border: 1px solid #d71826;
+    border-radius: 20px;
+    width: 300px;
+    text-align: center;
+    background-color: #d71826;
+    margin-top: 10px;
+    padding: 20px 20px;
+}
+#erf_consulting .erf_c_header{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+
+/* #erf_consulting .erf_c_contents1{
+    display: flex;
+    justify-content: flex-start;
+}
+#erf_consulting .erf_c_contents1 div:nth-child(1){
+    font-size: 14px;
+    color: #fff;
+    width: 80px;
+    line-height: 2;
+    font-weight: 600;
+}
+#erf_consulting .erf_c_contents1 div:nth-child(2){
+    height: 33px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #fcf7d1;
+    width: 140px;
+}
+#erf_consulting .erf_c_contents2{
+    display: flex;
+    justify-content: flex-start;
+}
+#erf_consulting .erf_c_contents2 div{
+    height: 33px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #fcf7d1;
+    width: 140px;
+}
+#erf_consulting .erf_c_contents2 select{
+    height: 40px;
+    font-size: 13px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+}
+#erf_consulting .erf_c_contents2 span{
+    text-align: center;
+    vertical-align: middle; */
+/* } */
+/* PC , 테블릿 가로 (해상도 768px ~ 1023px)*/
+@media screen and (min-width:1024px){
+
+}
+@media screen and (min-width:768px) and (max-width: 1023px) {
+
+	#er_floatbanner{
+        display: none;
+    }
+
+}
+@media screen and (max-width:767px){
+
+    #er_floatbanner{
+        display: none;
+    }
+
+}

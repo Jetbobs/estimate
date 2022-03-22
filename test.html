@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="estimate.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="test.js"></script>
@@ -23,31 +24,33 @@
                             <span>인터넷 희망속도는 ?</span>
                         </td>
                         <td class="estimate_contents">
-                            <div class="internet_speed_box">
-                                <select name="internet_speed" id="">
-                                    <option value="::인터넷속도::">::인터넷속도::</option>
-                                    <option value="500M+">500M+와이파이</option>
-                                    <option value="1G+">1G+와이파이</option>
-                                    <option value="100M">100M</option>
-                                    <option value="500M">500M</option>
-                                    <option value="1G">1G</option>
-                                    <option value="2.5G">2.5G</option>
-                                    <option value="5G">5G</option>
-                                    <option value="10G">10G</option>
-                                </select>
-                            </div>
-                            <div>
-                                <select name="internet_speed_perpc" id="">
-                                    <option value="0">::회선수::</option>
-                                    <option value="1">1회선</option>
-                                    <option value="2">2회선</option>
-                                    <option value="3">3회선</option>
-                                    <option value="4">4회선</option>
-                                    <option value="5">5회선</option>
-                                </select>
-                            </div>
-                            <div class="explain_box">
-                                <span class="explain">PC 무제한 접속</span>
+                            <div class="estimate_contents_internet_speed">
+                                <div class="internet_speed_box">
+                                    <select name="internet_speed" id="">
+                                        <option value="::인터넷속도::">::인터넷속도::</option>
+                                        <option value="500M+">500M+와이파이</option>
+                                        <option value="1G+">1G+와이파이</option>
+                                        <option value="100M">100M</option>
+                                        <option value="500M">500M</option>
+                                        <option value="1G">1G</option>
+                                        <option value="2.5G">2.5G</option>
+                                        <option value="5G">5G</option>
+                                        <option value="10G">10G</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <select name="internet_speed_perpc" id="">
+                                        <option value="0">::회선수::</option>
+                                        <option value="1">1회선</option>
+                                        <option value="2">2회선</option>
+                                        <option value="3">3회선</option>
+                                        <option value="4">4회선</option>
+                                        <option value="5">5회선</option>
+                                    </select>
+                                </div>
+                                <div class="explain_box">
+                                    <span class="explain">PC 무제한 접속</span>
+                                </div>
                             </div>
                         </td>
                     </tr>
@@ -56,21 +59,21 @@
                             <span>고정 IP가 필요하신가요 ?</span>
                         </td>
                         <td class="estimate_contents">
-                            <div class="perpc_hidden_fixed_ip">
-                                <select name="fixed_ip" id="fixed_ip">
-                                    <option value="0">::회선수::</option>
-                                    <option value="1">1회선</option>
-                                    <option value="2">2회선</option>
-                                    <option value="3">3회선</option>
-                                    <option value="4">4회선</option>
-                                    <option value="5">5회선</option>
-                                </select>
-                            </div>
-                            <div class="fixed_ip_box">
-                                <input type="radio" name="office_ip" value="N_office_ip">
-                                <label for="office_ip">필요없음</label>
-                                <input type="radio" name="office_ip" value="Y_office_ip">
-                                <label for="office_ip">필요함</label>
+                            <div class="estimate_contents_fixed_ip">
+                                <div class="perpc_hidden_fixed_ip">
+                                    <select name="fixed_ip" id="fixed_ip">
+                                        <option value="0">::회선수::</option>
+                                        <option value="1">1회선</option>
+                                        <option value="2">2회선</option>
+                                        <option value="3">3회선</option>
+                                    </select>
+                                </div>
+                                <div class="fixed_ip_box">
+                                    <input type="radio" name="office_ip" value="N_office_ip">
+                                    <label for="office_ip">필요없음</label>
+                                    <input type="radio" name="office_ip" value="Y_office_ip">
+                                    <label for="office_ip">필요함</label>
+                                </div>
                             </div>
                         </td>
                     </tr>
@@ -79,26 +82,28 @@
                             <span>TV 필요하신가요 ?</span>
                         </td>
                         <td class="estimate_contents">
-                            <div class="need_tv">
-                                <select name="tv" id="tv">
-                                    <option value="0">::필요없음::</option>
-                                    <option value="1">BizOTV_베이직_243 ch</option>
-                                    <option value="2">BizOTV_라이트_248 ch</option>
-                                    <option value="3">BizOTV_에센스_273 ch</option>
-                                    <option value="4">BizOTV_슬림_</option>
-                                </select>
-                            </div>
-                            <div class="ip_box">
-                                <input type="radio" name="need_tv" value="0">
-                                <label for="need_tv">추가TV필요없음</label>
-                                <input type="radio" name="need_tv" value="1">
-                                <label for="need_tv">1대 더 필요</label>
-                                <input type="radio" name="need_tv" value="2">
-                                <label for="need_tv">2대 더 필요</label>
-                            </div>
-                            <!-- <div class="explain_box">
+                            <div class="estimate_contents_need_tv">
+                                <div class="need_tv">
+                                    <select name="tv" id="tv">
+                                        <option value="0">::필요없음::</option>
+                                        <option value="BIZOTV 슬림">BIZOTV 슬림</option>
+                                        <option value="BIZOTV 에센스_273">BIZOTV 에센스_273</option>
+                                        <option value="BIZOTV 라이트_248">BIZOTV 라이트_248</option>
+                                        <option value="BIZOTV 베이직_243">BIZOTV 베이직_243</option>
+                                    </select>
+                                </div>
+                                <div class="tv_box">
+                                    <input type="radio" name="need_tv" value="0">
+                                    <label for="need_tv">필요없음</label>
+                                    <input type="radio" name="need_tv" value="1">
+                                    <label for="need_tv">1대 추가</label>
+                                    <input type="radio" name="need_tv" value="2">
+                                    <label for="need_tv">2대 추가</label>
+                                </div>
+                                <!-- <div class="explain_box">
                                 <span class="explain"> (오피스넷 가입시 가입 가능)</span>
                             </div> -->
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -106,38 +111,13 @@
                             <span>사무실 전화/팩스</span>
                         </td>
                         <td class="estimate_contents">
-                            <div class="call_internet_box">
-                                <div class="call_internet">
-                                    <div>
-                                        <label for="">필요한 전화(인터넷전화/유선전화) 대수는 ?</label>
-                                    </div>
-                                    <select name="office_internetcall_perpc" id="office_internetcall_perpc">
-                                        <option value="0">::회선수::</option>
-                                        <option value="1">1회선</option>
-                                        <option value="2">2회선</option>
-                                        <option value="3">3회선</option>
-                                        <option value="4">4회선</option>
-                                        <option value="5">5회선</option>
-                                        <option value="6">6회선</option>
-                                        <option value="7">7회선</option>
-                                        <option value="8">8회선</option>
-                                        <option value="9">9회선</option>
-                                        <option value="10">10회선</option>
-                                    </select>
-                                    <select name="office_internetcall" id="office_internetcall">
-                                        <option value="">::인터넷전화선택::</option>
-                                        <option value="A">IP-4705H_Centrex</option>
-                                        <option value="B">IP-4705G_Centrex</option>
-                                        <option value="C">IP-700SC</option>
-                                        <option value="D">MWP-2500</option>
-                                    </select>
-                                    <!-- <div class="explain_box">
-                                        <span class="explain">  (유선전화기 제공, 월 무료통화 제공, 발신표시 포함) </span>
-                                    </div> -->
-                                </div>
-                                <div class="call_wire_box">
-                                    <div>
-                                        <select name="office_wirecall_perpc" id="office_wirecall_perpc">
+                            <div class="estimate_contents_call">
+                                <div class="call_internet_box">
+                                    <div class="call_internet">
+                                        <div>
+                                            <label for="">필요한 전화(인터넷전화/유선전화) 대수는 ?</label>
+                                        </div>
+                                        <select name="office_internetcall_perpc" id="office_internetcall_perpc">
                                             <option value="0">::회선수::</option>
                                             <option value="1">1회선</option>
                                             <option value="2">2회선</option>
@@ -150,35 +130,66 @@
                                             <option value="9">9회선</option>
                                             <option value="10">10회선</option>
                                         </select>
-                                        <select name="office_wirecall" id="office_wirecall">
-                                            <option value="">::유선전화선택::</option>
-                                            <option value="1">홈무한3000</option>
-                                            <option value="2">소호무한3000</option>
-                                            <option value="3">팩스전용</option>
+                                        <select name="office_internetcall" id="office_internetcall">
+                                            <option value="">::인터넷전화선택::</option>
+                                            <option value="IP-4705H_Centrex">IP-4705H_Centrex</option>
+                                            <option value="IP-4705G_Centrex">IP-4705G_Centrex</option>
+                                            <option value="IP-700SC">IP-700SC</option>
+                                            <option value="MWP-2500">MWP-2500</option>
                                         </select>
+                                        <!-- <div class="explain_box">
+                                        <span class="explain">  (유선전화기 제공, 월 무료통화 제공, 발신표시 포함) </span>
+                                    </div> -->
                                     </div>
-                                    <!-- <div class="explain_box">
+                                    <div class="call_wire_box">
+                                        <div class="wire_call">
+                                            <div>
+                                                <select name="office_wirecall_perpc" id="office_wirecall_perpc">
+                                                    <option value="0">::회선수::</option>
+                                                    <option value="1">1회선</option>
+                                                    <option value="2">2회선</option>
+                                                    <option value="3">3회선</option>
+                                                    <option value="4">4회선</option>
+                                                    <option value="5">5회선</option>
+                                                    <option value="6">6회선</option>
+                                                    <option value="7">7회선</option>
+                                                    <option value="8">8회선</option>
+                                                    <option value="9">9회선</option>
+                                                    <option value="10">10회선</option>
+                                                </select>
+                                                <select name="office_wirecall" id="office_wirecall">
+                                                    <option value="">::유선전화선택::</option>
+                                                    <option value="홈무한3000">홈무한3000</option>
+                                                    <option value="소호무한3000">소호무한3000</option>
+                                                    <option value="팩스전용">팩스전용</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="explain_box">
                                         <span class="explain"> (유선전화기 제공, 무료통화 요금 미제공, 발신표시 미포함)</span>
                                     </div> -->
-                                </div>
-                                <div class="fax_box">
-                                    <select name="fax" id="fax">
-                                        <option value="">::팩스선택::</option>
-                                        <option value="A">사용함(6,050원)</option>
-                                    </select>
-                                    <select name="fax_perpc" id="fax_perpc">
-                                        <option value="0">::회선수::</option>
-                                        <option value="1">1회선</option>
-                                        <option value="2">2회선</option>
-                                        <option value="3">3회선</option>
-                                        <option value="4">4회선</option>
-                                        <option value="5">5회선</option>
-                                        <option value="6">6회선</option>
-                                        <option value="7">7회선</option>
-                                        <option value="8">8회선</option>
-                                        <option value="9">9회선</option>
-                                        <option value="10">10회선</option>
-                                    </select>
+                                    </div>
+                                    <div class="fax_box">
+                                        <div class="fax_call">
+                                            <select name="fax_perpc" id="fax_perpc">
+                                                <option value="0">::회선수::</option>
+                                                <option value="1">1회선</option>
+                                                <option value="2">2회선</option>
+                                                <option value="3">3회선</option>
+                                                <option value="4">4회선</option>
+                                                <option value="5">5회선</option>
+                                                <option value="6">6회선</option>
+                                                <option value="7">7회선</option>
+                                                <option value="8">8회선</option>
+                                                <option value="9">9회선</option>
+                                                <option value="10">10회선</option>
+                                            </select>
+                                            <select name="fax" id="fax">
+                                                <option value="">::팩스선택::</option>
+                                                <option value="FAX">사용함(6,050원)</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </td>
@@ -188,64 +199,38 @@
                             <span>인터넷전화 부가서비스를 선택해주세요.</span>
                         </td>
                         <td class="estimate_contents">
+                            <div class="estimate_contents_extra_services"></div>
                             <div class="extra_services_box">
-
-                                <input type="checkbox" name="display_callerid" value="발신번호표시" id="x1">
-                                <label for="x1">발신번호표시</label>
-
-
-                                <input type="checkbox" name="calling_music" value="통화연결음" id="x2">
-                                <label for="x2">통화연결음</label>
+                                <div class="estimate_contents_extra_services">
+                                    <input type="checkbox" name="display_callerid" value="발신번호표시" id="x1">
+                                    <label for="x1">발신번호표시</label>
 
 
-                                <input type="checkbox" name="condition_destinationcall" value="조건별착신전화" id="x3">
-                                <label for="x3">조건별착신전화</label>
-
-                                <input type="checkbox" name="ars" value="발신번호표시" id="x4">
-                                <label for="x4">ARS</label>
-
-                            </div>
-                            <div class="extra_services_box2">
-
-                                <input type="checkbox" name="onenumber_multiphone" value="원넘버멀티폰" id="x5">
-                                <label for="x5">원넘버멀티폰</label>
+                                    <input type="checkbox" name="calling_music" value="통화연결음" id="x2">
+                                    <label for="x2">통화연결음</label>
 
 
-                                <input type="checkbox" name="personalcall_security" value="개인통화보안" id="x6">
-                                <label for="x6">개인통화보안</label>
+                                    <input type="checkbox" name="condition_destinationcall" value="조건별착신전화" id="x3">
+                                    <label for="x3">조건별착신전화</label>
 
-                                <input type="checkbox" name="office100" value="오피스100" id="x7">
-                                <label for="x7">오피스100</label>
+                                    <input type="checkbox" name="ars" value="ARS" id="x4">
+                                    <label for="x4">ARS</label>
 
-                                <input type="checkbox" name="office200" value="오피스200" id="x8">
-                                <label for="x8">오피스200</label>
-                            </div>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="estimate_name">
-                            <span>보안카메라가 필요하신가요 ? </span>
-                        </td>
-                        <td class="estimate_contents">
-                            <div class="cctv_box">
-                                <div>
-                                    <select name="cctv" id="cctv">
-                                        <option value="0">::보안카메라선택::</option>
-                                        <option value="1">GiGAeyes i_slim1대</option>
-                                        <option value="2">GiGAeyes i_slim2대</option>
-                                        <option value="3">GiGAeyes i_slim3대</option>
-                                        <option value="4">GiGAeyes i_slim5대</option>
-                                        <option value="5">GiGAeyes i_slim6대</option>
-                                        <option value="6">GiGAeyes i_slim7대</option>
-                                        <option value="7">GiGAeyes i_slim8대</option>
-                                        <option value="8">GiGAeyes i_slim9대</option>
-                                    </select>
                                 </div>
-                                <div>
-                                    <input type="checkbox" name="cctv_mobile_combination" value="모바일결합"
-                                        id="mobile_cctv">
-                                    <label for="mobile_cctv">모바일결합</label>
+                                <div class="extra_services_box2">
+
+                                    <input type="checkbox" name="onenumber_multiphone" value="원넘버멀티폰" id="x5">
+                                    <label for="x5">원넘버멀티폰</label>
+
+
+                                    <input type="checkbox" name="personalcall_security" value="개인통화보안" id="x6">
+                                    <label for="x6">개인통화보안</label>
+
+                                    <input type="checkbox" name="office100" value="오피스100" id="x7">
+                                    <label for="x7">오피스100</label>
+
+                                    <input type="checkbox" name="office200" value="오피스200" id="x8">
+                                    <label for="x8">오피스200</label>
                                 </div>
                             </div>
                         </td>
@@ -253,6 +238,288 @@
                 </table>
             </div>
         </form>
+    </div>
+    <div id="estimate_result">
+        <div class="allin">
+            <table class="er_header">
+                <tr>
+                    <td class="er_header_title">
+                        <p>
+                            UD Networks 상품 견적서 XXXX-XXXX
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="er_header_date">
+                        <p class="er_header_date1">
+                            견적일자 :
+                        </p>
+                        <p class="er_header_date2">
+                            [단위 : 원 / 3년약정 / VAT포함금액]
+                        </p>
+                    </td>
+                </tr>
+            </table>
+            <table class="er_contents">
+                <colgroup>
+                    <col style="width: 13%;">
+                    <col style="width: 17%;">
+                    <col style="width: 18%;">
+                    <col style="width: 9%;">
+                    <col style="width: 15%;">
+                    <col style="width: 15%;">
+                    <col style="width: 15%;">
+                </colgroup>
+                <tr class="er_contents_header">
+                    <th colspan="2">구분</th>
+                    <th>상품명</th>
+                    <th>수량</th>
+                    <th>할인단가</th>
+                    <th>요금합계</th>
+                    <th>초기설치비</th>
+                </tr>
+                <tr class="er_internet_speed">
+                    <th rowspan="6" class="er_contents_title">
+                        기본상품
+                    </th>
+                    <td class="er_contents_subtitle">
+                        인터넷(유동IP)
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="er_fixed_ip">
+                    <td class="er_contents_subtitle">
+                        인터넷(고정IP)
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="er_need_tv">
+                    <td class="er_contents_subtitle">
+                        IPTV
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="er_internet_call">
+                    <td class="er_contents_subtitle">
+                        인터넷전화
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="er_wire_call">
+                    <td class="er_contents_subtitle">
+                        유선전화
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="er_fax_call">
+                    <td class="er_contents_subtitle">
+                        FAX
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="display_callerid">
+                    <th rowspan="8" class="er_contents_title">
+                        <p>인터넷전화</p>
+                        <p>부가서비스</p>
+                    </th>
+                    <td class="er_contents_subtitle">
+                        발신번호표시
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="calling_music">
+                    <td class="er_contents_subtitle">
+                        통화연결음
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="condition_destinationcall">
+                    <td class="er_contents_subtitle">
+                        조건별착신전화
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="ars">
+                    <td class="er_contents_subtitle">
+                        ARS
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="onenumber_multiphone">
+                    <td class="er_contents_subtitle">
+                        원넘버멀티폰
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="personalcall_security">
+                    <td class="er_contents_subtitle">
+                        개인통화보안
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="office100">
+                    <td class="er_contents_subtitle">
+                        오피스100
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="office200">
+                    <td class="er_contents_subtitle">
+                        오피스200
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="tv_settop">
+                    <th rowspan="2" class="er_contents_title">
+                        장비임대료
+                    </th>
+                    <td class="er_contents_subtitle">
+                        TV셋탑
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="tv_settop_more">
+                    <td class="er_contents_subtitle">
+                        추가TV셋탑
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="eqipment_installment">
+                    <th class="er_contents_title">
+                        장비할부금
+                    </th>
+                    <td class="er_contents_subtitle">
+                        070단말기
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+            </table>
+            <div id="er_sum">
+                <div class="er_sum1">설치비(1회납부)</div>
+                <div class="er_sum2"><span>0 원</span></div>
+                <div class="er_sum3">월납입총계</div>
+                <div class="er_sum4"><span>0 원</span></div>
+            </div>
+            <div id="er_footer">
+                <h4>
+                    ◈ 가입 유의사항
+                </h4>
+                <ul>
+                    <li>1. 기업용 상품신청 후 설치일까지 약 7일정도 소요됩니다.</li>
+                    <li>2. 가입신청 후 관련 서류를 접수해주셔야 합니다.</li>
+                    <li>3. 상담원 통화와 함께 스케쥴 조절 됩니다.</li>
+                    <li>4. 사은금은 개통익주 <font color="#ff0000">금요일</font> 지급됩니다.</li>
+                    <li>5. 설치이전까지 PC에 연결되는 <font color="#ff0000">허브 및 네트워크 공사는 고객사에서 미리 준비</font>
+                    </li>
+                    <li>6. 고정 IP는 단독으로 신청불가하며, 1회선당 최대 3개까지 신청가능합니다.</li>
+                    <li>7. 발생된 설치비는는 첫달요금에 1회 청구됩니다.</li>
+                    <li>8. 지급받은신 상품권+ <font color="#ff0000">사은금 1년이내 해지 또는 정지 미납체납시 100% 당사에 환수 </font> 하셔야 합니다. </li>
+                    <li>9. 3년이내 해지 또는 정지 미납체납으로 인한해지시에는 위약금이 부과 됩니다. </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </body>
 
