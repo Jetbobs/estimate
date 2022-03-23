@@ -5,11 +5,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="test.css">
-    <link rel="stylesheet" href="estimate.css">
+    <link rel="stylesheet" href="./css/test.css">
+    <link rel="stylesheet" href="./css/estimate.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="test.js"></script>
+    <script>
+        $(function () {
+    $('.estimate_contents .fixed_ip_box input[type="radio"]').on("change", function () {
+        let vals_ip = $(this).val();
+        let pic_ip = $('.estimate_contents .perpc_hidden_fixed_ip')
+
+        if (vals_ip == "Y_office_ip") {
+            pic_ip.css("display", "block");
+        } else {
+            pic_ip.css("display", "none");
+        }
+    })
+});
+
+    </script>
     <title>Document</title>
 </head>
 
@@ -93,11 +107,11 @@
                                     </select>
                                 </div>
                                 <div class="tv_box">
-                                    <input type="radio" name="need_tv" value="0">
+                                    <input type="radio" name="need_tv" value="0" class="need_tvs">
                                     <label for="need_tv">필요없음</label>
-                                    <input type="radio" name="need_tv" value="1">
+                                    <input type="radio" name="need_tv" value="1" class="need_tvs">
                                     <label for="need_tv">1대 추가</label>
-                                    <input type="radio" name="need_tv" value="2">
+                                    <input type="radio" name="need_tv" value="2" class="need_tvs">
                                     <label for="need_tv">2대 추가</label>
                                 </div>
                                 <!-- <div class="explain_box">
@@ -117,6 +131,13 @@
                                         <div>
                                             <label for="">필요한 전화(인터넷전화/유선전화) 대수는 ?</label>
                                         </div>
+                                        <select name="office_internetcall" id="office_internetcall">
+                                            <option value="">::인터넷전화선택::</option>
+                                            <option value="IP-4705H_Centrex">IP-4705H_Centrex</option>
+                                            <option value="IP-4705G_Centrex">IP-4705G_Centrex</option>
+                                            <option value="IP-700SC">IP-700SC</option>
+                                            <option value="MWP-2500">MWP-2500</option>
+                                        </select>
                                         <select name="office_internetcall_perpc" id="office_internetcall_perpc">
                                             <option value="0">::회선수::</option>
                                             <option value="1">1회선</option>
@@ -130,13 +151,6 @@
                                             <option value="9">9회선</option>
                                             <option value="10">10회선</option>
                                         </select>
-                                        <select name="office_internetcall" id="office_internetcall">
-                                            <option value="">::인터넷전화선택::</option>
-                                            <option value="IP-4705H_Centrex">IP-4705H_Centrex</option>
-                                            <option value="IP-4705G_Centrex">IP-4705G_Centrex</option>
-                                            <option value="IP-700SC">IP-700SC</option>
-                                            <option value="MWP-2500">MWP-2500</option>
-                                        </select>
                                         <!-- <div class="explain_box">
                                         <span class="explain">  (유선전화기 제공, 월 무료통화 제공, 발신표시 포함) </span>
                                     </div> -->
@@ -144,6 +158,12 @@
                                     <div class="call_wire_box">
                                         <div class="wire_call">
                                             <div>
+                                                <select name="office_wirecall" id="office_wirecall">
+                                                    <option value="">::유선전화선택::</option>
+                                                    <option value="홈무한3000">홈무한3000</option>
+                                                    <option value="소호무한3000">소호무한3000</option>
+                                                    <option value="팩스전용">팩스전용</option>
+                                                </select>
                                                 <select name="office_wirecall_perpc" id="office_wirecall_perpc">
                                                     <option value="0">::회선수::</option>
                                                     <option value="1">1회선</option>
@@ -157,12 +177,6 @@
                                                     <option value="9">9회선</option>
                                                     <option value="10">10회선</option>
                                                 </select>
-                                                <select name="office_wirecall" id="office_wirecall">
-                                                    <option value="">::유선전화선택::</option>
-                                                    <option value="홈무한3000">홈무한3000</option>
-                                                    <option value="소호무한3000">소호무한3000</option>
-                                                    <option value="팩스전용">팩스전용</option>
-                                                </select>
                                             </div>
                                         </div>
                                         <!-- <div class="explain_box">
@@ -171,6 +185,10 @@
                                     </div>
                                     <div class="fax_box">
                                         <div class="fax_call">
+                                            <select name="fax" id="fax">
+                                                <option value="">::팩스선택::</option>
+                                                <option value="FAX">사용함(6,050원)</option>
+                                            </select>
                                             <select name="fax_perpc" id="fax_perpc">
                                                 <option value="0">::회선수::</option>
                                                 <option value="1">1회선</option>
@@ -183,10 +201,6 @@
                                                 <option value="8">8회선</option>
                                                 <option value="9">9회선</option>
                                                 <option value="10">10회선</option>
-                                            </select>
-                                            <select name="fax" id="fax">
-                                                <option value="">::팩스선택::</option>
-                                                <option value="FAX">사용함(6,050원)</option>
                                             </select>
                                         </div>
                                     </div>
@@ -279,7 +293,7 @@
                     <th>초기설치비</th>
                 </tr>
                 <tr class="er_internet_speed">
-                    <th rowspan="6" class="er_contents_title">
+                    <th rowspan="7" class="er_contents_title">
                         기본상품
                     </th>
                     <td class="er_contents_subtitle">
@@ -308,6 +322,18 @@
                 <tr class="er_need_tv">
                     <td class="er_contents_subtitle">
                         IPTV
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="er_need_tv_plus">
+                    <td class="er_contents_subtitle">
+                        IPTV (추가)
                     </td>
                     <td class="product_name"></td>
                     <td class="product_ea"></td>
@@ -521,6 +547,9 @@
             </div>
         </div>
     </div>
+    <script src="./js/fun.js"></script>
+    <script src="./js/obj.js"></script>
+    <script src="./js/test.js"></script>
 </body>
 
 </html>
