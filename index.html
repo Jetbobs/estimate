@@ -41,7 +41,7 @@
                             <div class="estimate_contents_internet_speed">
                                 <div class="internet_speed_box">
                                     <select name="internet_speed" id="">
-                                        <option value="::인터넷속도::">::인터넷속도::</option>
+                                        <option value="0">::인터넷속도::</option>
                                         <option value="500M+">500M+와이파이</option>
                                         <option value="1G+">1G+와이파이</option>
                                         <option value="100M">100M</option>
@@ -74,6 +74,12 @@
                         </td>
                         <td class="estimate_contents">
                             <div class="estimate_contents_fixed_ip">
+                                <div class="fixed_ip_box">
+                                    <input type="radio" name="office_ip" value="N_office_ip">
+                                    <label for="office_ip">필요없음</label>
+                                    <input type="radio" name="office_ip" value="Y_office_ip">
+                                    <label for="office_ip">필요함</label>
+                                </div>
                                 <div class="perpc_hidden_fixed_ip">
                                     <select name="fixed_ip" id="fixed_ip">
                                         <option value="0">::회선수::</option>
@@ -81,12 +87,6 @@
                                         <option value="2">2회선</option>
                                         <option value="3">3회선</option>
                                     </select>
-                                </div>
-                                <div class="fixed_ip_box">
-                                    <input type="radio" name="office_ip" value="N_office_ip">
-                                    <label for="office_ip">필요없음</label>
-                                    <input type="radio" name="office_ip" value="Y_office_ip">
-                                    <label for="office_ip">필요함</label>
                                 </div>
                             </div>
                         </td>
@@ -132,7 +132,7 @@
                                             <label for="">필요한 전화(인터넷전화/유선전화) 대수는 ?</label>
                                         </div>
                                         <select name="office_internetcall" id="office_internetcall">
-                                            <option value="">::인터넷전화선택::</option>
+                                            <option value="0">::인터넷전화선택::</option>
                                             <option value="IP-4705H_Centrex">IP-4705H_Centrex</option>
                                             <option value="IP-4705G_Centrex">IP-4705G_Centrex</option>
                                             <option value="IP-700SC">IP-700SC</option>
@@ -156,10 +156,10 @@
                                     </div> -->
                                     </div>
                                     <div class="call_wire_box">
-                                        <div class="wire_call">
+                                        <div class="call_wire">
                                             <div>
                                                 <select name="office_wirecall" id="office_wirecall">
-                                                    <option value="">::유선전화선택::</option>
+                                                    <option value="0">::유선전화선택::</option>
                                                     <option value="홈무한3000">홈무한3000</option>
                                                     <option value="소호무한3000">소호무한3000</option>
                                                     <option value="팩스전용">팩스전용</option>
@@ -184,9 +184,9 @@
                                     </div> -->
                                     </div>
                                     <div class="fax_box">
-                                        <div class="fax_call">
+                                        <div class="call_fax">
                                             <select name="fax" id="fax">
-                                                <option value="">::팩스선택::</option>
+                                                <option value="0">::팩스선택::</option>
                                                 <option value="FAX">사용함(6,050원)</option>
                                             </select>
                                             <select name="fax_perpc" id="fax_perpc">
@@ -213,7 +213,6 @@
                             <span>인터넷전화 부가서비스를 선택해주세요.</span>
                         </td>
                         <td class="estimate_contents">
-                            <div class="estimate_contents_extra_services"></div>
                             <div class="extra_services_box">
                                 <div class="estimate_contents_extra_services">
                                     <input type="checkbox" name="display_callerid" value="발신번호표시" id="x1">
@@ -235,7 +234,6 @@
 
                                     <input type="checkbox" name="onenumber_multiphone" value="원넘버멀티폰" id="x5">
                                     <label for="x5">원넘버멀티폰</label>
-
 
                                     <input type="checkbox" name="personalcall_security" value="개인통화보안" id="x6">
                                     <label for="x6">개인통화보안</label>
@@ -343,7 +341,7 @@
                     </td>
                     <td class="product_setup_price"></td>
                 </tr>
-                <tr class="er_internet_call">
+                <tr class="er_call_internet">
                     <td class="er_contents_subtitle">
                         인터넷전화
                     </td>
@@ -355,7 +353,7 @@
                     </td>
                     <td class="product_setup_price"></td>
                 </tr>
-                <tr class="er_wire_call">
+                <tr class="er_call_wire">
                     <td class="er_contents_subtitle">
                         유선전화
                     </td>
@@ -367,7 +365,7 @@
                     </td>
                     <td class="product_setup_price"></td>
                 </tr>
-                <tr class="er_fax_call">
+                <tr class="er_fax">
                     <td class="er_contents_subtitle">
                         FAX
                     </td>

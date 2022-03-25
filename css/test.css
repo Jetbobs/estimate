@@ -80,6 +80,13 @@ a:link{
     box-sizing: border-box;
 } */
 
+.need_tv_more{
+    display: flex;
+}
+.need_tv_more input, label{
+    margin-right: 5px;
+}
+
 @media (min-width: 320px) and (max-width: 480px) { /* 대부분의 스마트폰 모바일 기기(세로)*/
 
     #estimate select{

@@ -1,11 +1,27 @@
 function set_sums() {
+
     let total_price, total_setup_price;
-    total_price = internet + fixedip + tv_price + tv_more + internet_call + wire_call + fax + extra1 + extra2 + extra3 + extra4 + extra5 + extra6 + extra7 + extra8 + tv_price_settop + tv_more_settop;
+    extra_sums = extra_price_price["발신번호표시"] + extra_price_price["통화연결음"] + extra_price_price["조건별착신전화"] + extra_price_price["ARS"] + extra_price_price["원넘버멀티폰"] + extra_price_price["개인통화보안"] + extra_price_price["오피스100"] + extra_price_price["오피스200"];
 
-    total_setup_price = internet_setup + fixedip_setup + tv_price_setup + tv_more_setup + internet_call_setup + wire_call_setup + fax_setup + extra1_setup + extra2_setup + extra3_setup + extra4_setup + extra5_setup + extra6_setup + extra7_setup + extra8_setup, tv_settop_setup + tv_more_settop_setup;
+    total_price = tv_price + tv_more + fixed_ip_sum + tv_price_settop + tv_more_settop + internet_speed_sum + call_internet_sum + eqipment_installment_sum + call_wire_sum + fax_sum + extra_sums;
+    // total_price = internet_speed_sum + tv_price + tv_settop + tv_more + tv_more_settop;
 
-    $(".er_sum2 span").text(total_setup_price + " 원");
-    $(".er_sum4 span").text(total_price + " 원")
+    total_setup_price = internet_speed_price_setup + call_internet_setup + tv_price_setup + tv_more_setup + fixed_ip_setup + call_internet_setup + call_wire_setup + tv_settop_setup + tv_more_settop_setup + call_internet_setup + fax_setup;
+
+    $(".er_sum2 span").text(total_setup_price.toLocaleString("ko-KR") + " 원");
+    $(".er_sum4 span").text(total_price.toLocaleString("ko-KR") + " 원")
+}
+function set_sums_store(){
+    let total_price, total_setup_price;
+
+    extra_sums = extra_price_price["발신번호표시"] + extra_price_price["통화중대기"] + extra_price_price["착신통화전환"];
+
+    total_price = internet_speed_sum + tv_price + tv_settop_sum + tv_more_settop + call_wire_sum + call_internet_sum + call_fax_sum + extra_sums;
+
+    total_setup_price = internet_speed_price_setup + tv_price_setup + tv_more_settop_setup + call_wire_setup_sum + call_internet_setup_sum + call_fax_setup_sum ;
+
+    $(".er_sum2 span").text(total_setup_price.toLocaleString("ko-KR") + " 원");
+    $(".er_sum4 span").text(total_price.toLocaleString("ko-KR") + " 원")
 }
 function reset(par) {
     for (let i = 0; i < par.length; i++) {
@@ -33,4 +49,22 @@ function resetvar(par){
         par[i] = 0;
         console.log(par,par[i]);
     }
+};
+function sum(par){
+    par_sum = par_price * par_ea;
+};
+function unchecked(par){
+    $(`input[name="${par}"]`).prop('checked', false);
+};
+function extra_reset(par){
+    $(`.${par} .product_sum`) = 0;
+};
+
+function tv_store(){
+    tv_price = need_tv_d[tv];
+    tv_price_setup = tv_setup_price;
+    tv_price_settop = tv_settop_gini;
+    tv_sum = tv_price * 1;
+    tv_settop_sum = tv_settop_gini * 1;
+    tts = 1;
 }
