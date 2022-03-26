@@ -146,15 +146,16 @@ $('.need_tv_more input[name="need_tv_more"]').on("change", function(){
     } else {
     if(tts = 1 ) {
         tv_more_ch = need_tv_d_more[tv];
-        tv_more = tv_more_ch + tv_more_ea;
+        tv_more = tv_more_ch * tv_more_ea;
         tv_more_settop = tv_settop_mores * tv_more_ea;
         tv_more_settop_setup = 0;
+        tv_more_setup = (11000 * tv_more_ea);
     }
      if(tv_more_ea > 0 ){
         fill(
             [
                 {
-                    "selector": er_need_tv_plus,
+                    "selector": er_tv_more,
                     "option": [tv, tv_more_ea, tv_more_ch, tv_more, tv_more_setup]
                 },
                 {
@@ -164,6 +165,9 @@ $('.need_tv_more input[name="need_tv_more"]').on("change", function(){
             ]
         )
     }}
+})
+$('.need_tv_more').on("change", function(){
+    set_sums_store();
 })
 
 //[call_internet]시작
@@ -369,5 +373,87 @@ $('.extra_services_box input').on("change", function(){
     }
 });
 $(".extra_services_box input").on("change", function () {
+    set_sums_store();
+});
+
+//[pos]시작
+//pos 시작
+$('.need_pos_box select[name="pos"]').on("change", function(){
+    pos = $(this).val();
+    if (pos == 0) {
+        [pos_price, pos_setup, pos_count, pos_sum, pos_setup_sum] = Array(5).fill(0);
+    } else {
+
+        pos_price = pos_d[pos];
+        pos_count = 1;
+        pos_ea = 1;
+        pos_sum = (pos_price * pos_ea);
+        pos_setup_sum = (pos_setup * pos_ea);
+    }
+
+    if (!(pos == 0)) {
+        fill(
+            [
+                {
+                    "selector": er_pos,
+                    "option": [pos, pos_ea, pos_price, pos_sum, pos_setup_sum]
+                }
+            ]
+        )
+    } else {
+        reset([er_pos]);
+    }
+})
+$(".need_pos_box").on("change", function () {
+    set_sums_store();
+});
+
+
+
+//[cctv]시작
+//cctv 셋팅
+$('.cctv_box select[name="cctv"]').on("change", function () {
+    cctv = $(this).val();
+    if (cctv == 0) {
+        [cctv_price, cctv_price_setup, cctv_count, cctv_sum] = Array(4).fill(0);
+    } else {
+        cctv_price = cctv_d[cctv];
+        cctv_setup_price = (cctv_setup * cctv_ea);
+        cctv_count = 1;
+        cctv_sum = (cctv_price * cctv_ea);
+    }
+    if (!(cctv == 0)) {
+        fill(
+            [
+                {
+                    "selector": er_cctv,
+                    "option": [cctv, cctv_ea, cctv_price, cctv_sum, cctv_setup_price]
+                }
+            ]
+        )
+    } else {
+        reset([er_cctv]);
+    }
+});
+$('.cctv_box select[name="cctv_ea"]').on("change", function () {
+    
+    cctv_ea = $(this).val();
+    cctv_price = cctv_ea_d[cctv_ea];
+    cctv_sum = (cctv_price * cctv_ea);
+    cctv_setup_price = cctv_setup_price * cctv_ea;
+    if (cctv_count == 1) {
+        fill(
+            [
+                {
+                    "selector": er_cctv,
+                    "option": [cctv, cctv_ea, cctv_price, cctv_sum, cctv_setup_price]
+                }
+            ]
+        )
+    } else {
+        reset([er_cctv]);
+    }
+});
+$(".cctv_box").on("change", function () {
     set_sums_store();
 });

@@ -23,7 +23,7 @@
     const tv_settop_mores = 2200;
     // const ginisettop = 4400;
     //가격
-    let [internet, fixedip, tv_price, tv_more, internet_call, wire_call, extra1, extra2, extra3, extra4, extra5, extra6, extra7, extra8, tv_price_settop, tv_more_settop,] = Array(16).fill(0);
+    let [internet, fixedip, tv_price, tv_more, internet_call, wire_call, tv_price_settop, tv_more_settop,] = Array(16).fill(0);
 
     let [internet_setup, fixedip_setup, tv_price_setup, tv_more_setup, tv_settop_setup, tv_more_settop_setup] = Array(6).fill(0);
     //문자
@@ -37,7 +37,7 @@
     let tv_more_ea;
     //셀렉터
     let er_need_tv = $(".er_need_tv");
-    let er_need_tv_plus = $(".er_need_tv_plus");
+    let er_tv_more = $(".er_tv_more");
     let tv_settop_s = $(".tv_settop");
     let tv_settop_more = $(".tv_settop_more");
     let ginisettops = $('.need_tv_box input[name="ginisettop"]');
@@ -105,3 +105,30 @@ let extra_sums = extra_price_price["발신번호표시"]+extra_price_price["통�
 let extra_arr = [er_call_wire,display_callerid,call_holding,destinationcall];
 
 let extra_arr1 = ["display_callerid","call_holding","destinationcall"];
+
+const pos_d = { "카드단말_SMT-T283": 11000, "POS_HIT9": 33000};
+    // CCTV 가격
+    let [pos_price, pos_sum] = Array(2).fill(0);
+    // CCTV 문자
+    let pos_count = 0;
+    let pos;
+    // CCTV 정수
+    let pos_setup = 0;
+    let pos_ea = 0;
+    let pos_setup_sum = 0;
+    // CCTV 셀렉터 
+    let er_pos = $('.er_pos');
+
+    //CCTV 선언
+    const cctv_d = { "GiGAeyes_i_slim": 13200}
+    const cctv_ea_d = { "0": 13200, "1":13200,"2":12100,"3":11733,"4":11550,"5":11440,"6":11367,"7":11314,"8":11275}
+
+    //가격
+    let [cctv_price,cctv_setup, cctv_setup_price] = Array(3).fill(0);
+    //문자
+    let cctv;
+    let [cctv_count,cctv_sum] = Array(2).fill(0);
+    //정수
+    let cctv_ea = 0;
+    //셀렉터
+    let er_cctv = $('.er_cctv');

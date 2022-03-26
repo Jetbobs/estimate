@@ -16,9 +16,9 @@ function set_sums_store(){
 
     extra_sums = extra_price_price["발신번호표시"] + extra_price_price["통화중대기"] + extra_price_price["착신통화전환"];
 
-    total_price = internet_speed_sum + tv_price + tv_settop_sum + tv_more_settop + call_wire_sum + call_internet_sum + call_fax_sum + extra_sums;
+    total_price = internet_speed_sum + tv_price + tv_more + tv_settop_sum + tv_more_settop + call_wire_sum + call_internet_sum + call_fax_sum + extra_sums + pos_sum + cctv_sum;
 
-    total_setup_price = internet_speed_price_setup + tv_price_setup + tv_more_settop_setup + call_wire_setup_sum + call_internet_setup_sum + call_fax_setup_sum ;
+    total_setup_price = internet_speed_price_setup + tv_price_setup + tv_more_setup + tv_more_settop_setup + call_wire_setup_sum + call_internet_setup_sum + call_fax_setup_sum + pos_setup_sum + cctv_setup_price;
 
     $(".er_sum2 span").text(total_setup_price.toLocaleString("ko-KR") + " 원");
     $(".er_sum4 span").text(total_price.toLocaleString("ko-KR") + " 원")
