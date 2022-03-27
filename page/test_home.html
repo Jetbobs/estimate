@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="../css/test.css">
+    <link rel="stylesheet" href="../css/estimate.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="test.js"></script>
     <title>Document</title>
 </head>
 
@@ -25,7 +25,7 @@
                         <td class="estimate_contents">
                             <div class="internet_speed_box">
                                 <select name="internet_speed" id="">
-                                    <option value="::인터넷속도::">::인터넷속도::</option>
+                                    <option value="0">::인터넷속도::</option>
                                     <option value="500M+">500M+와이파이</option>
                                     <option value="1G+">1G+와이파이</option>
                                     <option value="100M">100M</option>
@@ -45,12 +45,12 @@
                             <div class="need_tv_box">
                                 <select name="tv" id="tv">
                                     <option value="0">::필요없음::</option>
-                                    <option value="1">OTV(베이직_235ch)_기본상품</option>
-                                    <option value="2">OTV(라이트_240ch)_추천상품</option>
-                                    <option value="3">OTV(에센스_260ch)_고급상품</option>                                   
-                                    <option value="3">OTV(키즈랜드_260ch)_키즈상품</option>
-                                    <option value="3">HD(넷플릭스_260ch)_넷플릭스</option>
-                                    <option value="3">UHD(넷플릭스_260ch)_넷플릭스UHD</option>
+                                    <option value="OTV(베이직_235ch)_기본상품">OTV(베이직_235ch)_기본상품</option>
+                                    <option value="OTV(라이트_240ch)_추천상품">OTV(라이트_240ch)_추천상품</option>
+                                    <option value="OTV(에센스_260ch)_고급상품">OTV(에센스_260ch)_고급상품</option>                                   
+                                    <option value="OTV(키즈랜드_260ch)_키즈상품">OTV(키즈랜드_260ch)_키즈상품</option>
+                                    <option value="HD(넷플릭스_260ch)_넷플릭스">HD(넷플릭스_260ch)_넷플릭스</option>
+                                    <option value="UHD(넷플릭스_260ch)_넷플릭스UHD">UHD(넷플릭스_260ch)_넷플릭스UHD</option>
 
                                 </select>
                                 <input type="checkbox" name="ginisettop" value="지니셋탑 희망시 체크" id="tv_gini">
@@ -68,7 +68,7 @@
                                 <label for="need_tv">추가TV필요없음</label>
                                 <input type="radio" name="need_tv_more" value="1">
                                 <label for="need_tv">1대 더 필요</label>
-                                <input type="radio" name="need_more" value="2">
+                                <input type="radio" name="need_tv_more" value="2">
                                 <label for="need_tv">2대 더 필요</label>
                             </div>
                             <!-- <div class="explain_box">
@@ -81,55 +81,73 @@
                             <span>인터넷전화기 필요하신가요 ?</span>
                         </td>
                         <td class="estimate_contents">
-                            <div class="need_internetcall">
-                                <div class="need_internetcall_box">
-                                    <select name="need_internetcall_call_perpc" id="need_internetcall_call_perpc">
+                            <div class="call_internet">
+                                <div class="call_internet_box">
+                                    <select name="home_internetcall" id="home_internetcall">
                                         <option value="0">::요금제선택::</option>
-                                        <option value="1">우리끼리3000[망내유선 3,000분+SMS150]</option>
-                                        <option value="2">유선3000[망내외 유선 3,000분]</option>
-                                        <option value="3">유무선3000[망내/외유선+망내무선3,000분]</option>
+                                        <option value="유무선3000[망내/외유선+망내무선3,000분]">유무선3000[망내/외유선+망내무선3,000분]</option>
                                     </select>
-                                    <select name="need_internetcall_call" id="need_internetcall_call">
-                                        <option value="">::회선수::</option>
-                                        <option value="1">1대</option>
-                                        <option value="2">2대</option>
-                                        <option value="3">3대</option>
-                                    </select>
-                                    <!-- <div class="explain_box">
-                                        <span class="explain">  (유선전화기 제공, 월 무료통화 제공, 발신표시 포함) </span>
-                                    </div> -->
                                 </div>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td class="estimate_name">
-                            <span>홈카메라가 필요하세요 ? </span>
+                            <span>유선전화 필요하신가요 ?</span>
                         </td>
                         <td class="estimate_contents">
-                            <div class="homecamera_box">
-                                <select name="homecamera" id="homecamera">
-                                    <option value="0">::홈카메라선택::</option>
-                                    <option value="1">홈캠1</option>
-                                </select>
+                            <div class="call_wire">
+                                <div class="call_wire_box">
+                                    <select name="home_wirecall" id="home_wirecall">
+                                        <option value="0">::요금제선택::</option>
+                                        <option value="우리끼리3000[망내유선_3,000분+SMS150]">우리끼리3000[망내유선 3,000분+SMS150]</option>
+                                        <option value="유선3000[망내외_유선_3,000분]">유선3000[망내외 유선 3,000분]</option>
+                                    </select>
+                                </div>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td class="estimate_name">
-                            <span>KT모바일 결합할인(가족포함)</span>
+                            <span>유선전화 부가서비스를 선택해주세요.</span>
                         </td>
                         <td class="estimate_contents">
-                            <div class="mobile_combination_box">
+                            <div class="extra_services_box">
+
+                                <input type="checkbox" name="display_callerid" value="발신번호표시" id="x1">
+                                <label for="x1">발신번호표시</label>
+
+
+                                <input type="checkbox" name="calling_stay" value="통화중대기" id="x2">
+                                <label for="x2">통화중대기</label>
+
+
+                                <input type="checkbox" name="condition_destinationcall_change" value="착신통화전환" id="x3">
+                                <label for="x3">착신통화전환</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="estimate_name">
+                            <span>보안카메라가 필요하신가요 ? </span>
+                        </td>
+                        <td class="estimate_contents">
+                            <div class="cctv_box">
                                 <div>
-                                    <select name="mobile_combination" id="mobile_combination">
-                                        <option value="0">::가족모바일합산요금::</option>
-                                        <option value="1">가족합산(22,000원↓)</option>
-                                        <option value="2">가족합산(22,000원↑)</option>
-                                        <option value="3">가족합산(64,900원↑)</option>
-                                        <option value="4">가족합산(108,900원↑)</option>
-                                        <option value="5">가족합산(141,900원↑)</option>
-                                        <option value="6">가족합산(174,900원↑)</option>
+                                    <select name="cctv" id="cctv">
+                                        <option value="0">::보안카메라선택::</option>
+                                        <option value="GiGAeyes_i_slim">GiGAeyes i_slim</option>
+                                    </select>
+                                    <select name="cctv_ea" id="cctv_ea">
+                                        <option value="0">::갯수선택::</option>
+                                        <option value="1">1대</option>
+                                        <option value="2">2대</option>
+                                        <option value="3">3대</option>
+                                        <option value="4">4대</option>
+                                        <option value="5">5대</option>
+                                        <option value="6">6대</option>
+                                        <option value="7">7대</option>
+                                        <option value="8">8대</option>
                                     </select>
                                 </div>
                             </div>
@@ -139,6 +157,234 @@
             </div>
         </form>
     </div>
+    <div id="estimate_result">
+        <div class="allin">
+            <table class="er_header">
+                <tr>
+                    <td class="er_header_title">
+                        <p>
+                            UD Networks 상품 견적서 XXXX-XXXX
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="er_header_date">
+                        <p class="er_header_date1">
+                            견적일자 :
+                        </p>
+                        <p class="er_header_date2">
+                            [단위 : 원 / 3년약정 / VAT포함금액]
+                        </p>
+                    </td>
+                </tr>
+            </table>
+            <table class="er_contents">
+                <colgroup>
+                    <col style="width: 13%;">
+                    <col style="width: 17%;">
+                    <col style="width: 18%;">
+                    <col style="width: 9%;">
+                    <col style="width: 15%;">
+                    <col style="width: 15%;">
+                    <col style="width: 15%;">
+                </colgroup>
+                <tr class="er_contents_header">
+                    <th colspan="2">구분</th>
+                    <th>상품명</th>
+                    <th>수량</th>
+                    <th>할인단가</th>
+                    <th>요금합계</th>
+                    <th>초기설치비</th>
+                </tr>
+                <tr class="er_internet_speed">
+                    <th rowspan="5" class="er_contents_title">
+                        기본상품
+                    </th>
+                    <td class="er_contents_subtitle">
+                        인터넷
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="er_need_tv">
+                    <td class="er_contents_subtitle">
+                        IPTV
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="er_tv_more">
+                    <td class="er_contents_subtitle">
+                        추가TV
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="er_call_internet">
+                    <td class="er_contents_subtitle">
+                        인터넷전화
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="er_call_wire">
+                    <td class="er_contents_subtitle">
+                        유선전화(PSTN)
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr>
+                    <th class="er_contents_title">
+                        기타상품
+                    </th>
+                    <td class="er_contents_subtitle">
+                        홈카메라
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="display_callerid">
+                    <th rowspan="3" class="er_contents_title">
+                        <p>유선전화</p>
+                        <p>부가서비스</p>
+                    </th>
+                    <td class="er_contents_subtitle">
+                        발신번호표시
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="call_holding">
+                    <td class="er_contents_subtitle">
+                        통화중대기
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="destinationcall">
+                    <td class="er_contents_subtitle">
+                        착신통화전환
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="tv_settop">
+                    <th rowspan="2" class="er_contents_title">
+                        장비임대료
+                    </th>
+                    <td class="er_contents_subtitle">
+                       TV셋탑
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="tv_settop_more">
+                    <td class="er_contents_subtitle">
+                        추가TV셋탑
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="er_cctv">
+                    <th class="er_contents_title">
+                        장비할부금
+                    </th>
+                    <td class="er_contents_subtitle">
+                        CCTV
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
+                </tr>
+            </table>
+            <div id="er_sum">
+                <div class="er_sum1">설치비(1회납부)</div>
+                <div class="er_sum2"><span>123 원</span></div>
+                <div class="er_sum3">월납입총계</div>
+                <div class="er_sum4"><span>456 원</span></div>
+            </div>
+            <div id="er_footer">
+                <h4>
+                    ◈ 가입 유의사항
+                </h4>
+                <ul>
+                    <li>1. 기업용 상품신청 후 설치일까지 약 7일정도 소요됩니다.</li>
+                    <li>2. 가입신청 후 관련 서류를 접수해주셔야 합니다.</li>
+                    <li>3. 상담원 통화와 함께 스케쥴 조절 됩니다.</li>
+                    <li>4. 사은금은 개통익주 <font color="#ff0000">금요일</font> 지급됩니다.</li>
+                    <li>5. 설치이전까지 PC에 연결되는 <font color="#ff0000">허브 및 네트워크 공사는 고객사에서 미리 준비</font>
+                    </li>
+                    <li>6. 고정 IP는 단독으로 신청불가하며, 1회선당 최대 3개까지 신청가능합니다.</li>
+                    <li>7. 발생된 설치비는는 첫달요금에 1회 청구됩니다.</li>
+                    <li>8. 지급받은신 상품권+ <font color="#ff0000">사은금 1년이내 해지 또는 정지 미납체납시 100% 당사에 환수 </font> 하셔야 합니다. </li>
+                    <li>9. 3년이내 해지 또는 정지 미납체납으로 인한해지시에는 위약금이 부과 됩니다. </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="../js/fun.js"></script>
+    <script src="../js/obj_home.js"></script>
+    <script src="../js/test_home.js"></script>
 </body>
 
 </html>

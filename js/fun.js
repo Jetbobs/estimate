@@ -23,6 +23,18 @@ function set_sums_store(){
     $(".er_sum2 span").text(total_setup_price.toLocaleString("ko-KR") + " 원");
     $(".er_sum4 span").text(total_price.toLocaleString("ko-KR") + " 원")
 }
+function set_sums_home(){
+    let total_price, total_setup_price;
+
+    extra_sums = extra_price_price["발신번호표시"] + extra_price_price["통화중대기"] + extra_price_price["착신통화전환"];
+
+    total_price = internet_speed_sum + tv_price + tv_more + tv_settop_sum + tv_more_settop + call_wire_sum + call_internet_sum + extra_sums + cctv_sum;
+
+    total_setup_price = internet_speed_price_setup + tv_price_setup + tv_more_setup + tv_more_settop_setup + call_wire_setup_sum + call_internet_setup_sum + cctv_setup_price;
+    
+    $(".er_sum2 span").text(total_setup_price.toLocaleString("ko-KR") + " 원");
+    $(".er_sum4 span").text(total_price.toLocaleString("ko-KR") + " 원")
+};
 function reset(par) {
     for (let i = 0; i < par.length; i++) {
         par[i].find(".product_name").empty();
