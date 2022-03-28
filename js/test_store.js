@@ -291,8 +291,8 @@ $('.call_wire select[name="store_wirecall_perpc"]').on("change", function () {
 $('.call_wire select').on("change", function(){
     set_sums_store();
 });
-//[call_fax]시작
-//call_fax 셋팅
+// //[call_fax]시작
+// //call_fax 셋팅
 $('.call_fax select[name="store_faxcall"]').on("change", function () {
     call_fax = $(this).val();
     if (call_fax == 0) {
@@ -392,6 +392,15 @@ $('.need_pos_box select[name="pos"]').on("change", function(){
     }
 
     if (!(pos == 0)) {
+        if(pos == "카드단말_SMT-T283"){
+            display_block(pos1);
+        } else if(pos == "POS_HIT9"){
+            display_block(pos2);
+        } else {
+            for (i = 0; i < dis_non_pos.length; i++) {
+                display_none([dis_non_pos[i]]);
+            }
+        }
         fill(
             [
                 {
@@ -402,6 +411,9 @@ $('.need_pos_box select[name="pos"]').on("change", function(){
         )
     } else {
         reset([er_pos]);
+        for (i = 0; i < dis_non_pos.length; i++) {
+            display_none([dis_non_pos[i]]);
+        }
     }
 })
 $(".need_pos_box").on("change", function () {

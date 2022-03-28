@@ -44,10 +44,10 @@
                             <span>TV 제공 총룸수를 입력 해주세요.</span>
                         </td>
                         <td class="estimate_contents">
-                            <div class="multiroom_box">
+                            <div class="tv_supply_box">
                                 <div>
                                     <span>TV제공 총 룸수</span>
-                                    <input type="text" name="tv_supply" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"/>
+                                    <input type="text" name="tv_supply" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"/ autocomplete="off">
                                     <span>룸</span>
                                 </div>
                             </div>
@@ -86,7 +86,7 @@
                             <span>TV요금제 선택</span>
                         </td>
                         <td class="estimate_contents">
-                            <div class="tv_plan__otv">
+                            <div class="tv_plan_otv">
                                 <label for="tv_plan__otv"></label>
                                 <select name="tv_plan__otv" id="tv_plan__otv">
                                     <option value="0">::OTV종류선택::</option>
@@ -99,7 +99,7 @@
                                     <option value="OTV34">OTV34</option>
                                 </select>
                             </div>
-                            <div class="tv_plan__ots">
+                            <div class="tv_plan_ots">
                                 <label for="tv_plan__ots"></label>
                                 <select name="tv_plan__ots" id="tv_plan__ots">
                                     <option value="0">::OTS종류선택::</option>
@@ -111,26 +111,6 @@
                             <!-- <div class="explain_box">
                                 <span class="explain"> (오피스넷 가입시 가입 가능)</span>
                             </div> -->
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="estimate_name">
-                            <div>
-                            <span>인터넷전화/집전화 유/무 선택</span>
-                        </div>
-                            <div>
-                                <span>(SOHO 결합시 필수)</span>
-                            </div>
-                        </td>
-                        <td class="estimate_contents">
-                            <div class="call_box">
-                                <div class="call">
-                                    <input type="radio" name="call_internet" value="개인사업자" id="x1">
-                                    <label for="x1">인터넷전화</label>
-                                    <input type="radio" name="call_home" value="법인사업자" id="x2">
-                                    <label for="x2">집전화</label>
-                                </div>
-                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -195,12 +175,12 @@
                     <th>요금합계</th>
                     <th>초기설치비</th>
                 </tr>
-                <tr>
-                    <th rowspan="4" class="er_contents_title">
+                <tr class="er_internet">
+                    <th rowspan="1" class="er_contents_title">
                         인터넷
                     </th>
                     <td class="er_contents_subtitle">
-                        500M
+                        인터넷
                     </td>
                     <td></td>
                     <td></td>
@@ -210,43 +190,7 @@
                     </td>
                     <td></td>
                 </tr>
-                <tr>
-                    <td class="er_contents_subtitle">
-                        500M패밀리
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <font><b>123</b></font>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td class="er_contents_subtitle">
-                        100M
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <font><b>123</b></font>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td class="er_contents_subtitle">
-                        100M패밀리
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <font><b>123</b></font>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
+                <tr class="er_tv">
                     <th rowspan="2" class="er_contents_title">
                         TV
                     </th>
@@ -261,7 +205,7 @@
                     </td>
                     <td></td>
                 </tr>
-                <tr>
+                <tr class="er_tv_more">
                     <td class="er_contents_subtitle">
                         추가TV
                     </td>
@@ -273,24 +217,12 @@
                     </td>
                     <td></td>
                 </tr>
-                <tr>
-                    <th rowspan="5" class="er_contents_title">
+                <tr class="er_wifi">
+                    <th rowspan="3" class="er_contents_title">
                         기타사항
                     </th>
                     <td class="er_contents_subtitle">
                         WIFI
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <font><b>123</b></font>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td class="er_contents_subtitle">
-                        보안카메라
                     </td>
                     <td></td>
                     <td></td>
@@ -315,18 +247,6 @@
                 <tr>
                     <td class="er_contents_subtitle">
                         추가셋탑임대료
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <font><b>123</b></font>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td class="er_contents_subtitle">
-                        다회선할인
                     </td>
                     <td></td>
                     <td></td>
@@ -362,6 +282,9 @@
             </div>
         </div>
     </div>
+    <script src="../js/fun.js"></script>
+    <script src="../js/obj_hotel.js"></script>
+    <script src="../js/test_hotel.js"></script>
 </body>
 
 </html>

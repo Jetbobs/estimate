@@ -176,6 +176,19 @@ $('.call_internet select[name="office_internetcall"]').on("change", function () 
     }
 
     if (!(call_internet == 0)) {
+        if(call_internet == "IP-4705H_Centrex"){
+            display_block(call_internet1);
+        } else if(call_internet == "IP-4705G_Centrex"){
+            display_block(call_internet2);
+        } else if(call_internet == "IP-700SC"){
+            display_block(call_internet3);
+        } else if(call_internet == "MWP-2500"){
+            display_block(call_internet4);
+        } else {
+            for (i = 0; i < dis_non_ic.length; i++) {
+                display_none([dis_non_ic[i]]);
+            }
+        }
         fill(
             [
                 {
@@ -197,6 +210,9 @@ $('.call_internet select[name="office_internetcall"]').on("change", function () 
             };
         for(i = 0; i < Object.keys(extra_price_price).length; i++){
             extra_price_price[Object.keys(extra_price_price)[i]] = 0;
+        }
+        for (i = 0; i < dis_non_ic.length; i++) {
+            display_none([dis_non_ic[i]]);
         }
     }
 

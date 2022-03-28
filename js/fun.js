@@ -80,3 +80,35 @@ function tv_store(){
     tv_settop_sum = tv_settop_gini * 1;
     tts = 1;
 }
+function supply_ea(){
+    (parseInt(tv_supply / 9) + 1);
+}
+
+    $('.call_par select[name="store_parcall_perpc"]').on("change", function () {
+        call_par_ea = $(this).val();
+        call_par_sum = (call_par_price * call_par_ea);
+        if (call_par_count == 1) {
+            call_par_setup = 27500;
+            call_par_setup_sum = call_par_setup * call_par_ea;
+            fill(
+                [
+                    {
+                        "selector": er_call_par,
+                        "option": [call_par, call_par_ea, call_par_price, call_par_sum, call_par_setup_sum]
+                    }
+                ]
+            )
+        } else {
+            reset([er_call_par]);
+        };
+    })
+    $('.call_fax select').on("change", function(){
+        set_sums_store();
+    });
+}
+function display_none(){
+    $(`.${par}`).css("display","none");
+}
+function display_block(){
+    $(`.${par}`).css("display","block");
+}

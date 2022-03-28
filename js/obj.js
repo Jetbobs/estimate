@@ -125,3 +125,5 @@ let extra_arr1 = ["display_callerid","calling_music","condition_destinationcall"
     // 문자
     // 정수
     // 셀렉터 
+let dis_non_ic = [call_internet1,call_internet2,call_internet3,call_internet4];
+let dis_non_pos = [pos1,pos2]
