@@ -35,6 +35,16 @@ function set_sums_home(){
     $(".er_sum2 span").text(total_setup_price.toLocaleString("ko-KR") + " 원");
     $(".er_sum4 span").text(total_price.toLocaleString("ko-KR") + " 원")
 };
+function set_sums_hotel(){
+   let total_price, total_setup_price;
+
+   total_price = internet_sum + tv_sum + tv_more_sum + wifi_sum + tv_settop_sum + tv_more_settop_sum  + internet_family_sum ;
+   total_setup_price = internet_setup_sum + tv_setup + tv_more_setup + wifi_setup_sum + tv_settop_setup + tv_more_settop_setup;
+
+   $(".er_sum2 span").text(total_setup_price.toLocaleString("ko-KR") + " 원");
+   $(".er_sum4 span").text(total_price.toLocaleString("ko-KR") + " 원")
+   
+}
 function reset(par) {
     for (let i = 0; i < par.length; i++) {
         par[i].find(".product_name").empty();
@@ -84,31 +94,22 @@ function supply_ea(){
     (parseInt(tv_supply / 9) + 1);
 }
 
-    $('.call_par select[name="store_parcall_perpc"]').on("change", function () {
-        call_par_ea = $(this).val();
-        call_par_sum = (call_par_price * call_par_ea);
-        if (call_par_count == 1) {
-            call_par_setup = 27500;
-            call_par_setup_sum = call_par_setup * call_par_ea;
-            fill(
-                [
-                    {
-                        "selector": er_call_par,
-                        "option": [call_par, call_par_ea, call_par_price, call_par_sum, call_par_setup_sum]
-                    }
-                ]
-            )
-        } else {
-            reset([er_call_par]);
-        };
-    })
-    $('.call_fax select').on("change", function(){
-        set_sums_store();
-    });
-}
 function display_none(){
     $(`.${par}`).css("display","none");
 }
 function display_block(){
     $(`.${par}`).css("display","block");
+}
+
+function unselected_tv_plan(par){
+    $('.tv_plan_box select option[name="tv_plan_otv"]').eq(par).prop("selected", false);
+}
+function unselected_tv_plan1(par){
+    $('.tv_plan_box select option[name="tv_plan_ots"]').eq(par).prop("selected", false);
+}
+function unselected_family(par){
+    $('.internet_family select option[name="internet_family"]').eq(par).prop("selected", false);
+}
+function unselected_internet_type(par){
+    $('.internet_type_box select option[name="internet_type"]').eq(par).prop("selected", false);
 }

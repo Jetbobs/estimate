@@ -26,12 +26,12 @@
                         <td class="estimate_contents">
                             <div class="business_name">
 
-                                <input type="radio" name="business_name" value="개인사업자" id="x1">
-                                <label for="x1">개인사업자</label>
+                                <input type="radio" name="business_name" value="법인사업자" id="x1">
+                                <label for="x1">법인사업자</label>
 
 
-                                <input type="radio" name="business_name" value="법인사업자" id="x2">
-                                <label for="x2">법인사업자</label>
+                                <input type="radio" name="business_name" value="개인사업자" id="x2">
+                                <label for="x2">개인사업자</label>
 
 
                                 <input type="radio" name="business_name" value="개인" id="x3">
@@ -47,7 +47,8 @@
                             <div class="tv_supply_box">
                                 <div>
                                     <span>TV제공 총 룸수</span>
-                                    <input type="text" name="tv_supply" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"/ autocomplete="off">
+                                    <input type="text" name="tv_supply"
+                                        onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" / autocomplete="off">
                                     <span>룸</span>
                                 </div>
                             </div>
@@ -60,11 +61,24 @@
                         <td class="estimate_contents">
                             <div class="internet_type_box">
                                 <select name="internet_type" id="internet_type">
-                                    <option value="0">::인터넷타입선택::</option>
-                                    <option value="기가_1G">기가_1G</option>
-                                    <option value="기가_Compact">기가_Compact</option>
-                                    <option value="올레인터넷">올레인터넷</option>
+                                    <option value="0" name="internet_type">::인터넷타입선택::</option>
+                                    <option value="100M" name="internet_type">100M</option>
+                                    <option value="500M" name="internet_type">500M</option>
+                                    <option value="1G" name="internet_type">1G</option>
                                 </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="estimate_name">
+                            <span>Wifi를 선택해 주세요</span>
+                        </td>
+                        <td class="estimate_contents">
+                            <div class="wifi_box">
+                                <input type="radio" name="wifi" value="0">
+                                <label for="wifi">필요없음</label>
+                                <input type="radio" name="wifi" value="wifi">
+                                <label for="wifi">필요함</label>
                             </div>
                         </td>
                     </tr>
@@ -75,9 +89,9 @@
                         <td class="estimate_contents">
                             <div class="tv_type_box">
                                 <input type="radio" name="tv_type" value="0">
-                                <label for="need_tv">OTS 설치</label>
-                                <input type="radio" name="tv_type" value="1">
                                 <label for="need_tv">OTV 설치</label>
+                                <input type="radio" name="tv_type" value="1">
+                                <label for="need_tv">OTS 설치</label>
                             </div>
                         </td>
                     </tr>
@@ -86,27 +100,29 @@
                             <span>TV요금제 선택</span>
                         </td>
                         <td class="estimate_contents">
-                            <div class="tv_plan_otv">
-                                <label for="tv_plan__otv"></label>
-                                <select name="tv_plan__otv" id="tv_plan__otv">
-                                    <option value="0">::OTV종류선택::</option>
-                                    <option value="OTV_멀티룸팩">OTV_멀티룸팩</option>
-                                    <option value="선택형">선택형</option>
-                                    <option value="OTV10">OTV10</option>
-                                    <option value="OTV12">OTV12</option>
-                                    <option value="OTV15">OTV15</option>
-                                    <option value="OTV25">OTV25</option>
-                                    <option value="OTV34">OTV34</option>
-                                </select>
-                            </div>
-                            <div class="tv_plan_ots">
-                                <label for="tv_plan__ots"></label>
-                                <select name="tv_plan__ots" id="tv_plan__ots">
-                                    <option value="0">::OTS종류선택::</option>
-                                    <option value="OTS10">OTS10</option>
-                                    <option value="OTS12">OTS12</option>
-                                    <option value="OTS15">OTS15</option>
-                                </select>
+                            <div class="tv_plan_box">
+                                <div class="tv_plan_otv">
+                                    <label for="tv_plan_otv"></label>
+                                    <select name="tv_plan_otv" id="tv_plan_otv">
+                                        <option value="0" name="tv_plan_otv">::OTV종류선택::</option>
+                                        <option value="OTV_멀티룸팩" name="tv_plan_otv">OTV_멀티룸팩</option>
+                                        <option value="선택형" name="tv_plan_otv">선택형</option>
+                                        <option value="OTV10" name="tv_plan_otv">OTV10</option>
+                                        <option value="OTV12" name="tv_plan_otv">OTV12</option>
+                                        <option value="OTV15" name="tv_plan_otv">OTV15</option>
+                                        <option value="OTV25" name="tv_plan_otv">OTV25</option>
+                                        <option value="OTV34" name="tv_plan_otv">OTV34</option>
+                                    </select>
+                                </div>
+                                <div class="tv_plan_ots">
+                                    <label for="tv_plan_ots"></label>
+                                    <select name="tv_plan_ots" id="tv_plan_ots">
+                                        <option value="0" name="tv_plan_ots"> ::OTS종류선택::</option>
+                                        <option value="OTS10" name="tv_plan_ots">OTS10</option>
+                                        <option value="OTS12" name="tv_plan_ots">OTS12</option>
+                                        <option value="OTS15" name="tv_plan_ots">OTS15</option>
+                                    </select>
+                                </div>
                             </div>
                             <!-- <div class="explain_box">
                                 <span class="explain"> (오피스넷 가입시 가입 가능)</span>
@@ -125,9 +141,9 @@
                         <td class="estimate_contents">
                             <div class="internet_family">
                                 <select name="internet_family" id="internet_family">
-                                    <option value="0">::필요없음::</option>
-                                    <option value="1">1회선</option>
-                                    <option value="2">2회선</option>
+                                    <option name="internet_family" value="0">::필요없음::</option>
+                                    <option name="internet_family" value="1">1회선</option>
+                                    <option name="internet_family" value="2">2회선</option>
                                 </select>
                             </div>
                         </td>
@@ -182,13 +198,13 @@
                     <td class="er_contents_subtitle">
                         인터넷
                     </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <font><b>123</b></font>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
                     </td>
-                    <td></td>
+                    <td class="product_setup_price"></td>
                 </tr>
                 <tr class="er_tv">
                     <th rowspan="2" class="er_contents_title">
@@ -197,71 +213,83 @@
                     <td class="er_contents_subtitle">
                         TV
                     </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <font><b>123</b></font>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
                     </td>
-                    <td></td>
+                    <td class="product_setup_price"></td>
                 </tr>
                 <tr class="er_tv_more">
                     <td class="er_contents_subtitle">
                         추가TV
                     </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <font><b>123</b></font>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
                     </td>
-                    <td></td>
+                    <td class="product_setup_price"></td>
                 </tr>
                 <tr class="er_wifi">
-                    <th rowspan="3" class="er_contents_title">
+                    <th rowspan="4" class="er_contents_title">
                         기타사항
                     </th>
                     <td class="er_contents_subtitle">
                         WIFI
                     </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <font><b>123</b></font>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
                     </td>
-                    <td></td>
+                    <td class="product_setup_price"></td>
                 </tr>
-                <tr>
+                <tr class="er_tv_settop">
                     <td class="er_contents_subtitle">
                         TV셋탑임대료
                     </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <font><b>123</b></font>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
                     </td>
-                    <td></td>
+                    <td class="product_setup_price"></td>
                 </tr>
-                <tr>
+                <tr class="er_tv_more_settop">
                     <td class="er_contents_subtitle">
                         추가셋탑임대료
                     </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <font><b>123</b></font>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
                     </td>
-                    <td></td>
+                    <td class="product_setup_price"></td>
+                </tr>
+                <tr class="internet_family">
+                    <td class="er_contents_subtitle">
+                        인터넷 패밀리
+                    </td>
+                    <td class="product_name"></td>
+                    <td class="product_ea"></td>
+                    <td class="product_price"></td>
+                    <td class="product_sum">
+                        <font><b></b></font>
+                    </td>
+                    <td class="product_setup_price"></td>
                 </tr>
             </table>
             <div id="er_sum">
                 <div class="er_sum1">설치비(1회납부)</div>
-                <div class="er_sum2"><span>123 원</span></div>
+                <div class="er_sum2"><span>0 원</span></div>
                 <div class="er_sum3">월납입총계</div>
-                <div class="er_sum4"><span>456 원</span></div>
+                <div class="er_sum4"><span>0 원</span></div>
             </div>
             <div id="er_footer">
                 <h4>

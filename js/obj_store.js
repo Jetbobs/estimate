@@ -133,7 +133,7 @@ const pos_d = { "카드단말_SMT-T283": 11000, "POS_HIT9": 33000};
     //셀렉터
     let er_cctv = $('.er_cctv');
 
-
+    let display_none = [pos1,pos2];
     // [{"selector": call_fax, "option": [call_fax_price, call_fax_setup, call_fax_count, call_fax_sum, call_fax_setup_sum, call_fax_ea, call_fax_d, er_call_fax ]}]
     //     [{"selector": call_fax_ea, "option":[call_fax_sum, call_fax_price, call_fax_count, call_fax_setup, call_fax_setup_sum, er_call_fax, call_fax]}]
 
