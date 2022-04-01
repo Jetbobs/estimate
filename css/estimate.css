@@ -4,6 +4,7 @@
 }
 
 #estimate_result{
+    display: none;
     width: 100%;
     background: #eeeeee;
 }

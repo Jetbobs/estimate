@@ -1,3 +1,10 @@
+$('#estimate').on("change", function(){
+    $('#estimate_result').css("display","block");
+    $('#er_floatbanner').css("display","block");
+	$('.doz_row').eq(7).css("display","block");
+    getrightnow();
+});
+
 //[internet_speed]시작
 //internet_speed 셋팅
 $('.internet_speed_box select[name="internet_speed"]').on("change", function () {
@@ -221,11 +228,7 @@ $('.call_wire select[name="home_wirecall"]').on("change", function () {
     }
 
     if (!(call_wire == 0)) {
-        if(call_wire == "유무선3000[망내/외유선+망내무선3,000분]"){
-            display_block(call_wire1);
-        } else {
-            display_none(call_wire1)
-        }
+        display_block([call_wires[call_wire]]);
         fill(
             [
                 {
@@ -244,7 +247,7 @@ $('.call_wire select[name="home_wirecall"]').on("change", function () {
         for(i = 0; i < Object.keys(extra_price_price).length; i++){
             extra_price_price[Object.keys(extra_price_price)[i]] = 0;
         }
-        display_none(call_wire1);
+        display_none("call_wire1");
     }
 
 });

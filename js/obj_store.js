@@ -133,27 +133,23 @@ const pos_d = { "카드단말_SMT-T283": 11000, "POS_HIT9": 33000};
     //셀렉터
     let er_cctv = $('.er_cctv');
 
-    let display_none = [pos1,pos2];
-    // [{"selector": call_fax, "option": [call_fax_price, call_fax_setup, call_fax_count, call_fax_sum, call_fax_setup_sum, call_fax_ea, call_fax_d, er_call_fax ]}]
-    //     [{"selector": call_fax_ea, "option":[call_fax_sum, call_fax_price, call_fax_count, call_fax_setup, call_fax_setup_sum, er_call_fax, call_fax]}]
 
-    //     function douneed_ea(par){
-    //         for(i = 0; i < par.length; i++){
-    //         par[i]["selector"] = $(this).val();
-    //         par[i]["option"][0] = (par[i]["option"][1] * par[i]["selector"]);
-    //         if (par[i]["option"][2] == 1) {
-    //             par[i]["option"][3] = 27500;
-    //             par[i]["option"][4] = par[i]["option"][3] * par[i]["selector"];
-    //             fill(
-    //                 [
-    //                     {
-    //                         "selector":  par[i]["option"][5],
-    //                         "option": [ par[i]["option"][6], par[i]["selector"],  par[i]["option"][1],  par[i]["option"][0],  par[i]["option"][4]]
-    //                     }
-    //                 ]
-    //             )
-    //         } else {
-    //             reset([ par[i]["option"][4]]);
-    //         };
-    //       }
-    //     }
+
+    //시간 날짜 선언
+let today = new Date();
+let year = today.getFullYear();
+let month = ('0' + (today.getMonth() + 1)).slice(-2);
+let day = ('0' + today.getDate()).slice(-2);
+
+let dateString = year + '-' + month + '-' + day;
+
+let hours = today.getHours();
+let minutes = today.getMinutes();
+let seconds = today.getSeconds();
+
+let timeString = hours+ ':' + minutes + ':' + seconds ;
+
+let rightnow = dateString + ' ' + timeString;
+
+let poss = {"카드단말_SMT-T283":"pos1","POS_HIT9":"pos2"};
+let dis_non_pos = ["pos1","pos2"]

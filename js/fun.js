@@ -10,7 +10,10 @@ function set_sums() {
 
     $(".er_sum2 span").text(total_setup_price.toLocaleString("ko-KR") + " 원");
     $(".er_sum4 span").text(total_price.toLocaleString("ko-KR") + " 원")
+    $(".fb_total_setup").text(total_setup_price.toLocaleString("ko-KR"));
+    $(".fb_total").text(total_price.toLocaleString("ko-KR"))
 }
+
 function set_sums_store(){
     let total_price, total_setup_price;
 
@@ -22,6 +25,8 @@ function set_sums_store(){
 
     $(".er_sum2 span").text(total_setup_price.toLocaleString("ko-KR") + " 원");
     $(".er_sum4 span").text(total_price.toLocaleString("ko-KR") + " 원")
+    $(".fb_total_setup").text(total_setup_price.toLocaleString("ko-KR"));
+    $(".fb_total").text(total_price.toLocaleString("ko-KR"))
 }
 function set_sums_home(){
     let total_price, total_setup_price;
@@ -34,6 +39,8 @@ function set_sums_home(){
     
     $(".er_sum2 span").text(total_setup_price.toLocaleString("ko-KR") + " 원");
     $(".er_sum4 span").text(total_price.toLocaleString("ko-KR") + " 원")
+    $(".fb_total_setup").text(total_setup_price.toLocaleString("ko-KR"));
+    $(".fb_total").text(total_price.toLocaleString("ko-KR"))
 };
 function set_sums_hotel(){
    let total_price, total_setup_price;
@@ -43,6 +50,8 @@ function set_sums_hotel(){
 
    $(".er_sum2 span").text(total_setup_price.toLocaleString("ko-KR") + " 원");
    $(".er_sum4 span").text(total_price.toLocaleString("ko-KR") + " 원")
+   $(".fb_total_setup").text(total_setup_price.toLocaleString("ko-KR"));
+   $(".fb_total").text(total_price.toLocaleString("ko-KR"))
    
 }
 function reset(par) {
@@ -94,11 +103,12 @@ function supply_ea(){
     (parseInt(tv_supply / 9) + 1);
 }
 
-function display_none(){
+function display_none(par){
     $(`.${par}`).css("display","none");
 }
-function display_block(){
+function display_block(par){
     $(`.${par}`).css("display","block");
+    $('.call_internet_img div').not(`.${par}`).css("display","none");
 }
 
 function unselected_tv_plan(par){
@@ -113,3 +123,7 @@ function unselected_family(par){
 function unselected_internet_type(par){
     $('.internet_type_box select option[name="internet_type"]').eq(par).prop("selected", false);
 }
+
+function getrightnow(){
+    $('.er_header_date1').text("견적일자 :"+ " " + rightnow)
+};

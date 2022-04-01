@@ -106,3 +106,21 @@ let extra_arr1 = ["display_callerid","call_holding","destinationcall"];
     let cctv_ea = 0;
     //셀렉터
     let er_cctv = $('.er_cctv');
+
+        //시간 날짜 선언
+let today = new Date();
+let year = today.getFullYear();
+let month = ('0' + (today.getMonth() + 1)).slice(-2);
+let day = ('0' + today.getDate()).slice(-2);
+
+let dateString = year + '-' + month + '-' + day;
+
+let hours = today.getHours();
+let minutes = today.getMinutes();
+let seconds = today.getSeconds();
+
+let timeString = hours+ ':' + minutes + ':' + seconds ;
+
+let rightnow = dateString + ' ' + timeString;
+
+let call_wires = {"우리끼리3000[망내유선_3,000분+SMS150]":"call_wire1","유선3000[망내외_유선_3,000분]":"call_wire1"}

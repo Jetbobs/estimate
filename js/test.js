@@ -1,3 +1,9 @@
+$('#estimate').on("change", function(){
+    $('#estimate_result').css("display","block");
+    $('#er_floatbanner').css("display","block");
+    getrightnow();
+});
+
 //[internet_speed]시작
 //internet_speed 셋팅
 $('.estimate_contents_internet_speed select[name="internet_speed"]').on("change", function () {
@@ -176,19 +182,7 @@ $('.call_internet select[name="office_internetcall"]').on("change", function () 
     }
 
     if (!(call_internet == 0)) {
-        if(call_internet == "IP-4705H_Centrex"){
-            display_block(call_internet1);
-        } else if(call_internet == "IP-4705G_Centrex"){
-            display_block(call_internet2);
-        } else if(call_internet == "IP-700SC"){
-            display_block(call_internet3);
-        } else if(call_internet == "MWP-2500"){
-            display_block(call_internet4);
-        } else {
-            for (i = 0; i < dis_non_ic.length; i++) {
-                display_none([dis_non_ic[i]]);
-            }
-        }
+        display_block([call_internets[call_internet]])
         fill(
             [
                 {

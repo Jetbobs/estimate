@@ -1,3 +1,10 @@
+$('#estimate').on("change", function(){
+    $('#estimate_result').css("display","block");
+    $('#er_floatbanner').css("display","block");
+	$('.doz_row').eq(5).css("display","block");
+    getrightnow();
+});
+
 //사업자 선택
 $('.business_name input[name="business_name"]').on("change", function () {
     business_name = $(this).val();
@@ -209,14 +216,18 @@ $('.tv_type_box input[name="tv_type"]').on("change", function () {
         tv_setup_sum = (tv_setup * tv_ea);
         //추가 tv
         tv_more = tv;
+        tv_plan_otv = "OTV_멀티룸팩";
         if (19 < tv_supply < 501) {
-            tv_more_price = (tv_more_d[tv_plan_ots] * 0.9)
+            tv_more_price = (tv_more_d[tv_plan_otv] * 0.9)
         } else {
             tv_more_price = tv_more_d[tv_type];
         };
         tv_more_sum = (tv_more_ea * tv_more_price);
         tv_more_setup = 11000;
         tv_more_setup_sum = (tv_more_setup * tv_more_ea);
+        //tv settop
+        tv_settop = tv;
+        tv_more_settop = tv;
     }
     if (!(tv_type == 0)) {
         fill(
@@ -263,6 +274,13 @@ $('.tv_type_box input[name="tv_type"]').on("change", function () {
             ]
         )
     }
+    for (let i = 0; i < tv_plan_otv_ea.length; i++) {
+        unselected_tv_plan([tv_plan_otv_ea[i]]);
+    }
+    for (let i = 0; i < tv_plan_ots_ea.length; i++) {
+        unselected_tv_plan1([tv_plan_ots_ea[i]]);
+    }
+
 })
 $('.tv_type_box').on("change", function(){
     set_sums_hotel();
@@ -344,7 +362,7 @@ $('.tv_plan_box select[name="tv_plan_otv"]').on("change", function () {
             };
             tv_more_sum = (tv_more_ea * tv_more_price);
             tv_more_setup = 11000;
-            tv_more_setup_sum = (tv_more_setup * tv_more_ea);
+            tv_more_setup_sum = (tv_more_setup * tv_more_ea);                   
         }
         if (tv_plan_otv == 0) {
             fill(
@@ -634,4 +652,6 @@ $('.wifi_box input[name="wifi"]').on("change", function () {
 $('.wifi_box').on("change", function(){
     set_sums_hotel();
 })
-
+$('#frm_office').submit(function() {
+    return false;
+  });

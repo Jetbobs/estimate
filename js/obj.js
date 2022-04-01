@@ -125,5 +125,25 @@ let extra_arr1 = ["display_callerid","calling_music","condition_destinationcall"
     // 문자
     // 정수
     // 셀렉터 
-let dis_non_ic = [call_internet1,call_internet2,call_internet3,call_internet4];
-let dis_non_pos = [pos1,pos2]
+let pos1, pos2
+
+let dis_non_ic = ["call_internet1","call_internet2","call_internet3","call_internet4"];
+
+
+//시간 날짜 선언
+let today = new Date();
+let year = today.getFullYear();
+let month = ('0' + (today.getMonth() + 1)).slice(-2);
+let day = ('0' + today.getDate()).slice(-2);
+
+let dateString = year + '-' + month + '-' + day;
+
+let hours = today.getHours();
+let minutes = today.getMinutes();
+let seconds = today.getSeconds();
+
+let timeString = hours+ ':' + minutes + ':' + seconds ;
+
+let rightnow = dateString + ' ' + timeString;
+
+let call_internets = {"IP-4705H_Centrex":"call_internet1","IP-4705G_Centrex":"call_internet2", "IP-700SC":"call_internet3","MWP-2500":"call_internet4"} 

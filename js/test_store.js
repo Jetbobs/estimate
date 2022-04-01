@@ -1,3 +1,10 @@
+$('#estimate').on("change", function(){
+    $('#estimate_result').css("display","block");
+    $('#er_floatbanner').css("display","block");
+	$('.doz_row').eq(6).css("display","block");
+    getrightnow();
+});
+
 //[internet_speed]시작
 //internet_speed 셋팅
 $('.internet_speed_box select[name="internet_speed"]').on("change", function () {
@@ -392,15 +399,7 @@ $('.need_pos_box select[name="pos"]').on("change", function(){
     }
 
     if (!(pos == 0)) {
-        if(pos == "카드단말_SMT-T283"){
-            display_block(pos1);
-        } else if(pos == "POS_HIT9"){
-            display_block(pos2);
-        } else {
-            for (i = 0; i < dis_non_pos.length; i++) {
-                display_none([dis_non_pos[i]]);
-            }
-        }
+        display_block([poss[pos]]);
         fill(
             [
                 {
