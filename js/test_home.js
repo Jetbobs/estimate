@@ -78,9 +78,11 @@ $('.internet_speed_box input[name="internet_speed_family"]').on("change", functi
 $('.need_tv_box select[name="tv"]').on("change", function(){
     tv = $(this).val();
     if (tv == 0){
-        [tv_price, tv_price_setup, tv_price_settop, tts, tv_more, tv_more_setup, tv_more_settop] = Array(7).fill(0)
+        [tv_price, tv_price_setup, tv_price_settop, tts, tv_more, tv_more_setup, tv_more_settop,tv_settop_sum] = Array(8).fill(0)
+        console.log(tv=0);
     } else {
         if(!(ginisettops.is(":checked") == false)){
+            tv_settop = 3300;
             tv_settop_gini = tv_settop + 1100;
             tv_store();
         } else{
@@ -102,13 +104,13 @@ $('.need_tv_box select[name="tv"]').on("change", function(){
             ]
         )
     } else {
-        reset([er_need_tv, tv_settop_s, er_need_tv_plus, tv_settop_more]);
+        reset([er_need_tv, tv_settop_s, er_tv_more, tv_settop_more]);
     }
 })
 $('.need_tv_box input[name="ginisettop"]').on("change", function(){
     tv = $('.need_tv_box select[name="tv"]').val();
     if (tv == 0){
-        [tv_price, tv_price_setup, tv_price_settop, tts, tv_more, tv_more_setup, tv_more_settop] = Array(7).fill(0)
+        [tv_price, tv_price_setup, tv_price_settop, tts, tv_more, tv_more_setup, tv_more_settop,tv_settop] = Array(8).fill(0)
     } else {
     if(!(ginisettops.is(":checked") == false)){
         tv_settop_gini = tv_settop + 1100;
@@ -137,7 +139,7 @@ $('.need_tv_box input[name="ginisettop"]').on("change", function(){
 $('.need_tv_box select').on("change", function(){
     set_sums_home();
 })
-$('.need_tv_box input').on("change", function(){
+$('.need_tv_box select').on("change", function(){
     set_sums_home();
 });
 
