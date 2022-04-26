@@ -42,6 +42,7 @@
     //정수
     //셀렉터
     let er_tv_more = $('.er_tv_more');
+    let tv_type_box = $('.tv_type_box input')
 
     let tv_plan_otv_ea = [0,1,2,3,4,5,6,7,8];
     let tv_plan_ots_ea = [0,1,2,3]

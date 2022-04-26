@@ -27,8 +27,9 @@ $('.tv_supply_box input[name="tv_supply"]').on("change", function () {
         } else {
             internet_ea = (parseInt(tv_supply / 8));
             tv_ea = (parseInt(tv_supply / 8));
-            tv_more_ea = ((tv_supply % 7) + (tv_ea * 6));
+            tv_more_ea = ((tv_supply - tv_ea));
         }
+        if(!(tv_type_box.is(':checked'))){
         //internet
         internet = "500M";
         internet_price = 25000;
@@ -42,16 +43,9 @@ $('.tv_supply_box input[name="tv_supply"]').on("change", function () {
         tv_sum = (tv_ea * tv_price);
         tv_setup = 27500;
         tv_setup_sum = (tv_setup * tv_ea);
-        //tv 셋탑
-        tv_settop = tv;
-        tv_settop_ea = tv_ea;
-        tv_settop_price = 2000;
-        tv_settop_sum = (tv_settop_price * tv_ea);
-        tv_settop_setup = 0;
-        tv_settop_setup_sum = (tv_ea * tv_settop_setup);
         //추가 tv
         tv_more = tv;
-        if (19 < tv_supply < 501) {
+        if (20 <= tv_supply && tv_supply <= 500) {
             tv_more_price = 4000 * 0.9;
         } else {
             tv_more_price = 4000;
@@ -59,6 +53,43 @@ $('.tv_supply_box input[name="tv_supply"]').on("change", function () {
         tv_more_sum = (tv_more_ea * tv_more_price);
         tv_more_setup = 11000;
         tv_more_setup_sum = (tv_more_setup * tv_more_ea);
+    };
+    if(!(typeof tv_type == 'undefined')){
+        if(tv_type == 0){
+                    //추가 tv
+        tv_more = tv;
+        //10% 할인 회선이 20~500 사이일때
+        if (20 <= tv_supply && tv_supply <= 500) {
+            tv_more_price = (tv_more_d[tv] * 0.9)
+        } else {
+            tv_more_price = tv_more_d[tv];
+        };
+
+        tv_more_sum = (tv_more_ea * tv_more_price);
+        tv_more_setup = 11000;
+        tv_more_setup_sum = (tv_more_setup * tv_more_ea);
+        } else {
+        //추가 tv
+        tv_more = tv;
+        //10% 할인 회선이 20~500 사이일때
+        if (20 <= tv_supply && tv_supply <= 500) {
+            tv_more_price = (tv_more_d1[tv] * 0.9)
+        } else {
+            tv_more_price = tv_more_d1[tv];
+        };
+
+        tv_more_sum = (tv_more_ea * tv_more_price);
+        tv_more_setup = 11000;
+        tv_more_setup_sum = (tv_more_setup * tv_more_ea);
+        };
+    }
+        //tv 셋탑
+        tv_settop = tv;
+        tv_settop_ea = tv_ea;
+        tv_settop_price = 2000;
+        tv_settop_sum = (tv_settop_price * tv_ea);
+        tv_settop_setup = 0;
+        tv_settop_setup_sum = (tv_ea * tv_settop_setup);
         //추가 tv 셋탑
         tv_more_settop = tv;
         tv_more_settop_ea = tv_more_ea;
@@ -186,7 +217,7 @@ $('.tv_type_box input[name="tv_type"]').on("change", function () {
         //추가 tv
         tv_more = tv;
         //10% 할인 회선이 20~500 사이일때
-        if (19 < tv_supply < 501) {
+        if (20 <= tv_supply && tv_supply <= 500) {
             tv_more_price = (tv_more_d1[tv] * 0.9)
         } else {
             tv_more_price = tv_more_d1[tv];
@@ -217,10 +248,10 @@ $('.tv_type_box input[name="tv_type"]').on("change", function () {
         //추가 tv
         tv_more = tv;
         tv_plan_otv = "OTV_멀티룸팩";
-        if (19 < tv_supply < 501) {
-            tv_more_price = (tv_more_d[tv_plan_otv] * 0.9)
+        if (20 <= tv_supply && tv_supply <= 500) {
+            tv_more_price = (tv_more_d[tv] * 0.9)
         } else {
-            tv_more_price = tv_more_d[tv_type];
+            tv_more_price = tv_more_d[tv];
         };
         tv_more_sum = (tv_more_ea * tv_more_price);
         tv_more_setup = 11000;
@@ -228,6 +259,7 @@ $('.tv_type_box input[name="tv_type"]').on("change", function () {
         //tv settop
         tv_settop = tv;
         tv_more_settop = tv;
+        
     }
     if (!(tv_type == 0)) {
         fill(
@@ -321,6 +353,9 @@ $('.tv_plan_box select[name="tv_plan_otv"]').on("change", function () {
                 tv_settop_price = 2000;
             } else if (tv == "선택형") {
                 tv_settop_price = 2000;
+            } else if(tv == "OTV10" || tv == "OTV12" || tv == "OTV15"){
+                tv_settop_price = 1000;
+                console.log("tv1000")
             } else {
                 tv_settop_price = 2000;
             }
@@ -340,6 +375,9 @@ $('.tv_plan_box select[name="tv_plan_otv"]').on("change", function () {
                 tv_more_settop_price = 2000;
             } else if (tv == "선택형") {
                 tv_more_settop_price = 2000;
+            
+            } else if(tv == "OTV10" || tv == "OTV12" || tv == "OTV15"){
+                tv_more_settop_price = 1000;   
             } else {
                 tv_more_settop_price = 2000;
             }
@@ -355,14 +393,48 @@ $('.tv_plan_box select[name="tv_plan_otv"]').on("change", function () {
             tv_setup_sum = (tv_setup * tv_ea);
             //추가 tv
             tv_more = tv;
-            if (19 < tv_supply < 501) {
+            if (20 <= tv_supply && tv_supply <= 500) {
+                console.log("tv할인")
                 tv_more_price = tv_more_d[tv_plan_otv] * 0.9;
             } else {
+                console.log("tv가격")
                 tv_more_price = tv_more_d[tv_plan_otv];
             };
             tv_more_sum = (tv_more_ea * tv_more_price);
             tv_more_setup = 11000;
-            tv_more_setup_sum = (tv_more_setup * tv_more_ea);                   
+            tv_more_setup_sum = (tv_more_setup * tv_more_ea);
+            //tv settop
+            tv_settop = tv;
+            tv_settop_ea = tv_ea;
+            if (tv == "OTV_멀티룸팩") {
+                tv_settop_price = 2000;
+            } else if (tv == "선택형") {
+                tv_settop_price = 2000;
+            } else if(tv == "OTV10" || tv == "OTV12" || tv == "OTV15"){
+                tv_settop_price = 1000;
+                console.log("tv1000")
+            } else {
+                tv_settop_price = 2000;
+            }
+            tv_settop_sum = (tv_settop_price * tv_ea);
+            tv_settop_setup = 0;
+            tv_settop_setup_sum = (tv_ea * tv_settop_setup);    
+            //추가 tv 셋탑
+            tv_more_settop = tv;
+            tv_more_settop_ea = tv_more_ea;
+            if (tv == "OTV_멀티룸팩") {
+                tv_more_settop_price = 2000;
+            } else if (tv == "선택형") {
+                tv_more_settop_price = 2000;
+            
+            } else if(tv == "OTV10" || tv == "OTV12" || tv == "OTV15"){
+                tv_more_settop_price = 1000;   
+            } else {
+                tv_more_settop_price = 2000;
+            }
+            tv_more_settop_sum = (tv_more_settop_price * tv_more_ea);
+            tv_more_settop_setup = 0;
+            tv_more_settop_setup_sum = (tv_more_ea * tv_more_settop_setup)               
         }
         if (tv_plan_otv == 0) {
             fill(

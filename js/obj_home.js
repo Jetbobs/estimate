@@ -19,7 +19,7 @@
     const need_tv_d_more = { "OTV(베이직_235ch)_기본상품": 7370, "OTV(라이트_240ch)_추천상품": 7370, "OTV(에센스_260ch)_고급상품": 7370, "OTV(키즈랜드_260ch)_키즈상품": 7370 ,"HD(넷플릭스_260ch)_넷플릭스":  7370, "UHD(넷플릭스_260ch)_넷플릭스UHD": 7370 };
     const tv_setup_price = 15400;
     const tv_setup_more_price = 15400;
-    const tv_settop = 3300;
+    let tv_settop = 3300;
     const tv_settop_mores = 2200;
 
         //가격
